@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modèle 3B</title>
+    <link rel="stylesheet" href="modele3b.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <h1 class="logo">Bella Vita</h1>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <picture>
+        <source
+          srcset="
+            images/480/interieur-480.jpg    480w,
+            images/800/interieur-800.jpg    800w,
+            images/1024/interieur-1024.jpg 1024w
+          "
+          sizes="100vw"
+        />
+        <img
+          src="images/1024/interieur-1024.jpg"
+          alt="Intérieur chaleureux de la pizzeria Bella Vita"
+          class="hero-img"
+          fetchpriority="high" 
+        />
+      </picture>
+      <div class="hero-content">
+        <h2>Pizzeria Bella Vita</h2>
+        <p>Saveurs italiennes authentiques, préparées avec passion.</p>
+        <p class="cta">Réserver au <strong>04 12 34 56 78</strong></p>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+      <a href="menu.pdf" class="menu-link" target="_blank">
+        <h2>Notre Menu</h2>
+        <p>Découvrez toutes nos pizzas, pâtes et desserts maison.</p>
+      </a>
+    </section>
+
+    <!-- Gallery Slider -->
+    <section id="galerie" class="gallery-slider">
+      <div class="slides">
+        <img
+          src="images/1024/pizza1-1024.jpg"
+          srcset="
+            images/480/pizza1-480.jpg    480w,
+            images/800/pizza1-800.jpg    800w,
+            images/1024/pizza1-1024.jpg 1024w
+          "
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          alt="Pizza Margherita"
+          class="active"
+        />
+        <img
+          src="images/1024/pizza2-1024.jpg"
+          srcset="
+            images/480/pizza2-480.jpg    480w,
+            images/800/pizza2-800.jpg    800w,
+            images/1024/pizza2-1024.jpg 1024w
+          "
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          alt="Pizza 4 fromages"
+        />
+        <img
+          src="images/1024/pizza3-1024.jpg"
+          srcset="
+            images/480/pizza3-480.jpg    480w,
+            images/800/pizza3-800.jpg    800w,
+            images/1024/pizza3-1024.jpg 1024w
+          "
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          alt="Pizza végétarienne"
+        />
+        <img
+          src="images/1024/pizza4-1024.jpg"
+          srcset="
+            images/480/pizza4-480.jpg    480w,
+            images/800/pizza4-800.jpg    800w,
+            images/1024/pizza4-1024.jpg 1024w
+          "
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          alt="Pizza fruits de mer"
+        />
+      </div>
+
+      <button class="prev" aria-label="Image précédente">&#10094;</button>
+      <button class="next" aria-label="Image suivante">&#10095;</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Adresse :</strong> Rue des Oliviers 12, 4000 Liège</p>
+        <p><strong>Téléphone :</strong> 04 12 34 56 78</p>
+        <p><strong>Horaires :</strong> Mar - Dim : 11h30 – 22h00</p>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10114.752901120975!2d5.583859!3d50.670049!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa7e1be112a7%3A0x11cc01e6d4326466!2sRue%20des%20Fleurs%2012%2C%204041%20Herstal%2C%20Belgium!5e0!3m2!1sen!2sus!4v1762348000051!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          allowfullscreen=""
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localisation de Pizza Bella Vita à Liège"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-left">
+        <!-- Facebook SVG -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="social-icon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="#fff"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.675 0h-21.35C.597 0 0 .598 0 1.333v21.333C0 23.403.597 24 1.325 24h11.495v-9.333H9.691v-3.642h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.764v2.314h3.59l-.467 3.642h-3.123V24h6.127C23.403 24 24 23.403 24 22.667V1.333C24 .598 23.403 0 22.675 0z"
+            />
+          </svg>
+        </a>
+
+        <!-- Instagram SVG -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="social-icon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="#fff"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <p>© 2025 Pizzeria Bella Vita – Tous droits réservés</p>
+    </footer>
+
+    <!-- Slider Script -->
+    <script>
+      const slides = document.querySelectorAll(".slides img");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let current = 0;
+
+      const showSlide = (index) => {
+        slides.forEach((img, i) => {
+          img.classList.toggle("active", i === index);
+        });
+      };
+
+      prevBtn.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      });
+
+      // Touch swipe
+      let startX = 0;
+      let endX = 0;
+      const slider = document.querySelector(".slides");
+
+      slider.addEventListener(
+        "touchstart",
+        (e) => (startX = e.touches[0].clientX)
+      );
+      slider.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        if (Math.abs(endX - startX) > 50) {
+          current =
+            endX > startX
+              ? (current - 1 + slides.length) % slides.length
+              : (current + 1) % slides.length;
+          showSlide(current);
+        }
+      });
+    </script>
+  </body>
+</html>

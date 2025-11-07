@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
+    />
+    <title>Modèle 2A</title>
+    <link rel="stylesheet" href="modele2a.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Navigation principale">
+        <h1 class="logo">Nova Boutique</h1>
+        <ul class="nav-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <img
+          src="images/1024/nova-1024.jpg"
+          srcset="
+            images/480/nova-480.jpg    480w,
+            images/800/nova-800.jpg    800w,
+            images/1024/nova-1024.jpg 1024w
+          "
+          sizes="100vw"
+          alt="Intérieur de la boutique Nova"
+          class="hero-img"
+          fetchpriority="high"
+          width="1024"
+          height="768"
+        />
+
+        <div class="hero-content">
+          <h2>Vêtements contemporains & intemporels</h2>
+          <p>
+            Des pièces soigneusement choisies pour refléter votre style, saison
+            après saison.
+          </p>
+          <a href="#collection" class="btn">Découvrir la collection</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section about">
+        <h2>À propos</h2>
+        <p>
+          Chez Nova Boutique, nous croyons en une mode simple, élégante et
+          durable. Chaque vêtement est sélectionné pour sa qualité, son confort
+          et son intemporalité. Nous travaillons avec des créateurs locaux et
+          des marques européennes pour proposer des collections à la fois
+          modernes et responsables.
+        </p>
+      </section>
+
+      <section id="collection" class="section collection">
+        <h2>Notre collection</h2>
+        <div class="gallery">
+          <img
+            src="images/1024/look1-1024.jpg"
+            srcset="
+              images/480/look1-480.jpg    480w,
+              images/800/look1-800.jpg    800w,
+              images/1024/look1-1024.jpg 1024w
+            "
+            sizes="
+              (max-width: 480px) 100vw,
+              (max-width: 768px) 100vw,
+              100vw"
+            loading="lazy"
+            decoding="async"
+            alt="Tenue élégante femme"
+            width="1024"
+            height="1536"
+          />
+          <img
+            src="images/1024/look2-1024.jpg"
+            srcset="
+              images/480/look2-480.jpg    480w,
+              images/800/look2-800.jpg    800w,
+              images/1024/look2-1024.jpg 1024w
+            "
+            sizes="
+              (max-width: 480px) 100vw,
+              (max-width: 768px) 100vw,
+              100vw"
+            loading="lazy"
+            decoding="async"
+            alt="Tenue décontractée homme"
+            width="1024"
+            height="1536"
+          />
+          <img
+            src="images/1024/look3-1024.jpg"
+            srcset="
+              images/480/look3-480.jpg    480w,
+              images/800/look3-800.jpg    800w,
+              images/1024/look3-1024.jpg 1024w
+            "
+            sizes="
+              (max-width: 480px) 100vw,
+              (max-width: 768px) 100vw,
+              100vw"
+            loading="lazy"
+            decoding="async"
+            alt="Veste moderne"
+            width="1024"
+            height="1536"
+          />
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Nous contacter</h2>
+        <p>Venez nous rendre visite ou écrivez-nous pour toute demande.</p>
+        <address class="contact-list">
+          <a
+            href="https://maps.google.com/?q=Rue des Fleurs 12, 4041 Herstal"
+            target="_blank"
+            rel="noopener noreferrer"
+            >📍 Rue des Fleurs 12, 4041 Herstal</a
+          >
+          <a href="tel:+32499000000">📞 +32 499 00 00 00</a>
+          <a href="mailto:contact@novaboutique.be"
+            >✉️ contact@novaboutique.be</a
+          >
+        </address>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2523.012947115896!2d5.573!3d50.632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f6f75b72a4c7%3A0x1234567890abcdef!2sRue%20des%20Fleurs%2012%2C%204000%20Li%C3%A8ge!5e0!3m2!1sfr!2sbe!4v0000000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation de Nova Boutique à Liège"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Nova Boutique — Mode contemporaine</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+/* General Style */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #fdf8f3;
+  scroll-behavior: smooth;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b46b4e;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #b43f3f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 0 0 4rem 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 70vh;
+  height: 70dvh;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.cta {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Sections */
+section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+h2 {
+  color: #b43f3f;
+  margin-bottom: 1rem;
+}
+
+/* Menu */
+.menu-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #b43f3f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.menu-link:hover {
+  background-color: #922f2f;
+}
+
+/* Gallery */
+.galerie {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About */
+.apropos p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contact */
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+/* Footer */
+footer {
+  background-color: #b43f3f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

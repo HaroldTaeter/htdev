@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modèle 3C</title>
+    <link rel="stylesheet" href="modele3c.css" />
+  </head>
+  <body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact">
+      <p>
+        📞 04 12 34 56 78 &nbsp; | &nbsp; 📍 Rue des Oliviers 12, 4000 Liège
+        &nbsp; | &nbsp; ⏰ Mar - Dim : 11h30 – 22h00
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+      <h1 class="logo">Bella Vita</h1>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <picture>
+        <source
+          srcset="
+            images/480/interieur-480.jpg    480w,
+            images/800/interieur-800.jpg    800w,
+            images/1024/interieur-1024.jpg 1024w
+          "
+          sizes="100vw"
+        />
+        <img
+          src="images/1024/interieur-1024.jpg"
+          alt="Intérieur chaleureux de la pizzeria Bella Vita"
+          class="hero-img"
+          fetchpriority="high"
+        />
+      </picture>
+      <div class="hero-content">
+        <h2>Pizzeria Bella Vita</h2>
+        <p>Saveurs italiennes authentiques, préparées avec passion.</p>
+        <p class="cta">Réserver au <strong>04 12 34 56 78</strong></p>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <main>
+      <section id="menu" class="menu">
+        <h2>Notre Menu</h2>
+        <p>Découvrez toutes nos pizzas, pâtes et desserts maison.</p>
+        <div class="menu-container">
+          <iframe src="menu.pdf" title="Menu Bella Vita" loading="lazy"></iframe>
+          <a href="menu.pdf" class="menu-download" target="_blank">Ouvrir le menu (PDF)</a>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="galerie" class="galerie">
+        <h2>Quelques photos</h2>
+        <div class="gallery-grid">
+          <img src="images/1024/pizza1-1024.jpg" alt="Pizza Margherita" loading="lazy" />
+          <img src="images/1024/pizza2-1024.jpg" alt="Pizza 4 fromages" loading="lazy" />
+          <img src="images/1024/pizza3-1024.jpg" alt="Pizza végétarienne" loading="lazy" />
+          <img src="images/1024/pizza4-1024.jpg" alt="Pizza fruits de mer" loading="lazy" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10114.752901120975!2d5.583859!3d50.670049!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa7e1be112a7%3A0x11cc01e6d4326466!2sRue%20des%20Fleurs%2012%2C%204041%20Herstal%2C%20Belgium!5e0!3m2!1sen!2sus!4v1762348000051!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy"
+        decoding="async"
+        title="Localisation de Pizza Bella Vita à Liège"
+      ></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-contact">
+        <p>
+          📞 04 12 34 56 78 &nbsp; | &nbsp; 📍 Rue des Oliviers 12, 4000 Liège
+          &nbsp; | &nbsp; ⏰ Mar - Dim : 11h30 – 22h00
+        </p>
+      </div>
+      <p>© 2025 Pizzeria Bella Vita – Tous droits réservés</p>
+    </footer>
+  </body>
+</html>

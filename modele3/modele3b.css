@@ -1,0 +1,266 @@
+/* General Style */
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background-color: #fdf8f3;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lora", serif;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b46b4e;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2e5e49;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  position: static;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 0 0 4rem 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+/* Button */
+.menu-link {
+  display: inline-block;
+  padding: 2rem 3rem;
+  background-color: #2e5e49;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 16px;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(46, 94, 73, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-link:hover {
+  background-color: #244a3a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(36, 74, 58, 0.35);
+}
+
+.menu-link h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.menu-link p {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+/* SLIDER */
+.gallery-slider {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery-slider .slides {
+  width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.gallery-slider .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  transition: opacity 1s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-slider .slides img.active {
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.gallery-slider button:hover {
+  color: white;
+}
+
+.gallery-slider .prev {
+  left: 30px;
+}
+
+.gallery-slider .next {
+  right: 30px;
+}
+
+/* Contact */
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 900px;
+  border: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #2e5e49;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.footer-left {
+  position: absolute;
+  left: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icon svg {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover svg {
+  opacity: 0.8;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 60vh;
+    height: 60dvh;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-left {
+    position: static;
+    order: -1;
+    justify-content: center;
+  }
+
+  .footer-left a {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-img {
+    height: 55vh;
+    height: 55dvh;
+  }
+
+  .gallery-slider button {
+    font-size: 2rem;
+  }
+}
