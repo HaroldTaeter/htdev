@@ -270,7 +270,7 @@ svg {
 /* ===== FOOTER ===== */
 footer {
   background-color: #2a2a2a;
-  color: #e6dfd4;
+  color: #f0e8dc;
   padding: 25px 40px;
   font-size: 0.95em;
 }
@@ -291,7 +291,7 @@ footer {
 }
 
 .footer-left a {
-  color: #e6dfd4;
+  color: #f0e8dc;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -305,7 +305,7 @@ footer {
 }
 
 .footer-left a svg path {
-  fill: #e6dfd4;
+  fill: #f0e8dc;
   transition: fill 0.2s ease;
 }
 

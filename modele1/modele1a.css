@@ -220,7 +220,7 @@ svg {
 /* ===== FOOTER ===== */
 footer {
   background-color: #272727;
-  color: #d9c9a6;
+  color: #e8d9b8;
   padding: 25px 40px;
   font-size: 0.95em;
 }
@@ -234,7 +234,7 @@ footer {
 }
 
 .footer-left a {
-  color: #d9c9a6;
+  color: #e8d9b8;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -247,7 +247,7 @@ footer {
 }
 
 .footer-left a svg path {
-  fill: #d9c9a6;
+  fill: #e8d9b8;
   transition: fill 0.2s ease;
 }
 
@@ -268,5 +268,22 @@ footer {
 
   footer {
     text-align: center;
+  }
+}
+
+@media (max-width: 840px) {
+  .visit {
+    margin: 60px 20px;
+    padding: 25px 20px 40px;
+    max-width: 100%;
+  }
+
+  .visit-info p,
+  .horaire-list li {
+    font-size: 0.95em;
+  }
+
+  .map iframe {
+    height: 260px;
   }
 }

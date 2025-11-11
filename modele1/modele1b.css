@@ -248,7 +248,7 @@ p {
 
 footer {
   background-color: #222;
-  color: #ccc;
+  color: #e0e0e0;
   padding: 20px 40px;
   font-size: 0.9em;
 }
@@ -269,7 +269,7 @@ footer {
 }
 
 .footer-left a {
-  color: #ccc;
+  color: #e0e0e0;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -282,7 +282,7 @@ footer {
 }
 
 .footer-left a svg path {
-  fill: #ccc;
+  fill: #e0e0e0;
   transition: fill 0.2s ease;
 }
 
@@ -293,7 +293,7 @@ footer {
 .footer-right p {
   margin: 0;
   font-size: 0.9em;
-  color: #aaa;
+  color: #d0d0d0;
 }
 
 /* ======== TABLETS (max-width: 768px) ======== */
