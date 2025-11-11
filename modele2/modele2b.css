@@ -1,4 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;600&display=swap');
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/poppins-v24-latin-600.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* dm-serif-display-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/dm-serif-display-v17-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 
 :root {
   --primary: #f26b6b;
@@ -25,6 +58,18 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b46b4e;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+img,
+svg {
+  user-select: none;
 }
 
 /* Navbar */
@@ -69,6 +114,7 @@ html {
 .hero {
   position: relative;
   height: 80vh;
+  height: 80dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +202,7 @@ html {
   width: fit-content;
   max-width: 100%;
   max-height: 90vh;
+  max-height: 90dvh;
 }
 
 .carousel-slide {
@@ -183,6 +230,7 @@ html {
 .carousel-slide img {
   display: block;
   max-height: 90vh;
+  max-height: 90dvh;
   max-width: 100%;
   width: auto;
   height: auto;
@@ -279,6 +327,7 @@ footer {
 
   .hero {
     height: 70vh;
+    height: 70dvh;
   }
 
   .hero-content h2 {
@@ -289,6 +338,7 @@ footer {
 @media (max-width: 480px) {
   .hero {
     height: 60vh;
+    height: 60dvh;
   }
 
   .hero-content {

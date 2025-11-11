@@ -1,35 +1,39 @@
-/* Font imports same as modele2a.css */
+/* playfair-display-regular - latin */
 @font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
-  font-display: swap
+  src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* playfair-display-600 - latin */
 @font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/playfair-display-v40-latin-600.woff2') format('woff2');
-  font-display: swap
+  src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* open-sans-regular - latin */
 @font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/open-sans-v44-latin-regular.woff2') format('woff2');
-  font-display: swap
+  src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* open-sans-600 - latin */
 @font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/open-sans-v44-latin-600.woff2') format('woff2');
-  font-display: swap
+  src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 
 /* Reset & base */
 * {
@@ -53,6 +57,11 @@ a:focus-visible, button:focus-visible {
   outline: 2px solid #b46b4e;
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+img,
+svg {
+  user-select: none;
 }
 
 /* Navbar */

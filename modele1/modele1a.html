@@ -9,10 +9,6 @@
     />
     <title>Modèle 1A</title>
     <link rel="stylesheet" href="modele1a.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Work+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body>
@@ -20,10 +16,11 @@
       <img
         src="images/1024/lumea-facade-1024.jpg"
         srcset="
-          images/480/lumea-facade-480.jpg 480w,
-          images/800/lumea-facade-800.jpg 800w,
+          images/480/lumea-facade-480.jpg    480w,
+          images/800/lumea-facade-800.jpg    800w,
           images/1024/lumea-facade-1024.jpg 1024w
         "
+        sizes="100vw"
         alt="Vitrine de la boutique Lumea"
         class="hero-img"
         fetchpriority="high"
@@ -49,25 +46,46 @@
       <section class="gallery">
         <img
           src="images/1024/lumea-interior-1024.jpg"
+          srcset="
+            images/480/lumea-interior-480.jpg    480w,
+            images/800/lumea-interior-800.jpg    800w,
+            images/1024/lumea-interior-1024.jpg 1024w
+          "
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Intérieur de la boutique Lumea"
           loading="lazy"
+          decoding="async"
         />
         <img
           src="images/1024/lumea-sofa-1024.jpg"
+          srcset="
+            images/480/lumea-sofa-480.jpg    480w,
+            images/800/lumea-sofa-800.jpg    800w,
+            images/1024/lumea-sofa-1024.jpg 1024w
+          "
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Canapé dans la boutique"
           loading="lazy"
+          decoding="async"
         />
         <img
           src="images/1024/lumea-lamp-1024.jpg"
+          srcset="
+            images/480/lumea-lamp-480.jpg    480w,
+            images/800/lumea-lamp-800.jpg    800w,
+            images/1024/lumea-lamp-1024.jpg 1024w
+          "
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Lampe artisanale Lumea"
           loading="lazy"
+          decoding="async"
         />
       </section>
 
       <section class="visit">
         <div class="visit-info">
           <h2>Nous rendre visite</h2>
-          <p>📍 Rue de la poste 34, 1234 Macommune</p>
+          <p>📍 Parc de la Boverie 3, 4020 Liège</p>
           <p>⏰ Ouverture:</p>
           <ul class="horaire-list">
             <li>Mardi de 10h à 18h</li>
@@ -81,12 +99,13 @@
         <div class="map">
           <iframe
             title="Localisation de Lumea sur Google Maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5565.125900472583!2d5.860891251036808!3d50.5850375605314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c08bc5729a8169%3A0x57c5a79206959ffe!2sPlace%20Henri%20Vieuxtemps!5e0!3m2!1sen!2sbe!4v1761493079655!5m2!1sen!2sbe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
             width="600"
             height="450"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
+            decoding="async"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

@@ -1,37 +1,45 @@
 /* playfair-display-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* playfair-display-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/playfair-display-v40-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/open-sans-v44-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/open-sans-v44-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Reset & base */
@@ -51,6 +59,18 @@ html {
   scroll-behavior: smooth;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b46b4e;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+img,
+svg {
+  user-select: none;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -61,8 +81,10 @@ html {
   position: sticky;
   top: 0;
   border-bottom: 1px solid #eee;
-  z-index: 10; /* ensures it stays above images/content */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* subtle separation */
+  z-index: 10;
+  /* ensures it stays above images/content */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  /* subtle separation */
 }
 
 .logo {
@@ -187,7 +209,7 @@ html {
   height: auto;
   align-self: start;
   border-radius: 8px;
-  display:block;
+  display: block;
 }
 
 /* About */
@@ -199,16 +221,21 @@ html {
 /* Contact */
 .contact .contact-list {
   display: block;
-  font-style: normal;      /* reset address italics */
+  font-style: normal;
+  /* reset address italics */
   margin-top: 1.5rem;
 }
+
 .contact .contact-list a {
   display: block;
   margin: 0.5rem 0;
   text-decoration: none;
   color: inherit;
 }
-.contact .contact-list a:hover { color: #b46b4e; }
+
+.contact .contact-list a:hover {
+  color: #b46b4e;
+}
 
 .map-container {
   margin-top: 2rem;
@@ -238,17 +265,21 @@ footer {
    ≤ 768px (tablets / small laptops)
    ========================= */
 @media (max-width: 768px) {
+
   /* Navbar */
   .navbar {
     padding: 0.75rem 1rem;
   }
+
   .logo {
     font-size: 1.25rem;
   }
+
   .nav-links {
     gap: 1rem;
     flex-wrap: wrap;
   }
+
   .nav-links a {
     font-size: 0.95rem;
   }
@@ -259,13 +290,16 @@ footer {
     height: 70dvh;
     padding: 0 1rem;
   }
+
   .hero-content h2 {
     font-size: 1.9rem;
   }
+
   .hero-content p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
+
   .btn {
     padding: 0.8rem 1.4rem;
   }
@@ -273,8 +307,10 @@ footer {
   /* Sections */
   .section {
     padding: 3rem 1rem;
-    max-width: 720px;             /* tighter measure for readability */
+    max-width: 720px;
+    /* tighter measure for readability */
   }
+
   .section h2 {
     font-size: 1.6rem;
   }
@@ -297,20 +333,24 @@ footer {
    ≤ 480px (phones)
    ========================= */
 @media (max-width: 480px) {
+
   /* Navbar: stack neatly */
   .navbar {
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
   }
+
   .logo {
     text-align: center;
     font-size: 1.15rem;
   }
+
   .nav-links {
     justify-content: center;
     gap: 0.75rem;
   }
+
   .nav-links a {
     font-size: 0.95rem;
     padding: 0.25rem 0.5rem;
@@ -322,13 +362,16 @@ footer {
     height: 60dvh;
     padding: 0 0.75rem;
   }
+
   .hero-content h2 {
     font-size: 1.6rem;
   }
+
   .hero-content p {
     font-size: 0.95rem;
     margin-bottom: 1.25rem;
   }
+
   .btn {
     padding: 0.75rem 1.2rem;
     border-radius: 26px;
@@ -340,6 +383,7 @@ footer {
     padding: 2.5rem 0.75rem;
     max-width: 100%;
   }
+
   .section h2 {
     font-size: 1.4rem;
   }
@@ -354,6 +398,6 @@ footer {
   .map-container iframe {
     height: 220px;
     border-radius: 6px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   }
 }
