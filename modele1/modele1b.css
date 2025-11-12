@@ -296,8 +296,7 @@ footer {
   color: #d0d0d0;
 }
 
-/* ======== TABLETS (max-width: 768px) ======== */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   header {
     height: 70vh;
     height: 70dvh;
