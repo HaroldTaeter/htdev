@@ -139,11 +139,10 @@ svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-left: 1px solid #e0dcd7;
 }
 
 /* Buttons */
-.btn {
+.hero-btn {
   background-color: #b46b4e;
   color: #fff;
   text-decoration: none;
@@ -153,7 +152,7 @@ svg {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.hero-btn:hover {
   background-color: #8e523d;
 }
 
@@ -276,10 +275,15 @@ footer {
     flex-direction: column-reverse;
   }
 
-  .hero-text,
-  .hero-image {
+  .hero-text {
     flex: 1 1 100%;
     padding: 2.5rem 1.5rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 60vh;
+    padding: 0;   /* remove padding so image touches edges */
   }
 
   .hero-text {
@@ -323,14 +327,14 @@ footer {
     font-size: 0.8rem;
   }
 
-  .btn {
+  .hero-btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
   }
 
   .section {
     padding: 2.5rem 1rem;
-    margin: 0.75rem; /* margin around sections for breathing room */
+    margin: 0.75rem; 
   }
 
   .gallery-carousel {

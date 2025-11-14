@@ -156,11 +156,11 @@ svg {
 
 .hero-content p {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #f9f9f9;
 }
 
-.btn {
+.hero-btn {
   background: var(--primary);
   color: var(--text-light);
   padding: 0.9rem 1.8rem;
@@ -168,9 +168,10 @@ svg {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s;
+  display: inline-block;
 }
 
-.btn:hover {
+.hero-btn:hover {
   background: var(--secondary);
 }
 
@@ -353,7 +354,7 @@ footer {
     font-size: 0.95rem;
   }
 
-  .btn {
+  .hero-btn {
     padding: 0.7rem 1.4rem;
     font-size: 0.9rem;
   }
