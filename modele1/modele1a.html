@@ -14,11 +14,12 @@
   <body>
     <header class="hero">
       <img
-        src="images/1024/lumea-facade-1024.jpg"
+        src="images/1536/facade-1536.jpg"
         srcset="
-          images/480/lumea-facade-480.jpg    480w,
-          images/800/lumea-facade-800.jpg    800w,
-          images/1024/lumea-facade-1024.jpg 1024w
+          images/480/facade-480.jpg    480w,
+          images/800/facade-800.jpg    800w,
+          images/1024/facade-1024.jpg 1024w,
+          images/1536/facade-1536.jpg 1536w
         "
         sizes="100vw"
         alt="Vitrine de la boutique Lumea"
@@ -45,11 +46,12 @@
 
       <section class="gallery">
         <img
-          src="images/1024/lumea-interior-1024.jpg"
+          src="images/1536/interior-1536.jpg"
           srcset="
-            images/480/lumea-interior-480.jpg    480w,
-            images/800/lumea-interior-800.jpg    800w,
-            images/1024/lumea-interior-1024.jpg 1024w
+            images/480/interior-480.jpg    480w,
+            images/800/interior-800.jpg    800w,
+            images/1024/interior-1024.jpg 1024w,
+            images/1536/interior-1536.jpg 1536w
           "
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           alt="Intérieur de la boutique Lumea"
@@ -57,26 +59,28 @@
           decoding="async"
         />
         <img
-          src="images/1024/lumea-sofa-1024.jpg"
+          src="images/1536/meuble-1536.jpg"
           srcset="
-            images/480/lumea-sofa-480.jpg    480w,
-            images/800/lumea-sofa-800.jpg    800w,
-            images/1024/lumea-sofa-1024.jpg 1024w
+            images/480/meuble-480.jpg    480w,
+            images/800/meuble-800.jpg    800w,
+            images/1024/meuble-1024.jpg 1024w,
+            images/1536/meuble-1536.jpg 1536w
           "
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt="Canapé dans la boutique"
+          alt="Meuble en vente"
           loading="lazy"
           decoding="async"
         />
         <img
-          src="images/1024/lumea-lamp-1024.jpg"
+          src="images/1536/sofa-1536.jpg"
           srcset="
-            images/480/lumea-lamp-480.jpg    480w,
-            images/800/lumea-lamp-800.jpg    800w,
-            images/1024/lumea-lamp-1024.jpg 1024w
+            images/480/sofa-480.jpg    480w,
+            images/800/sofa-800.jpg    800w,
+            images/1024/sofa-1024.jpg 1024w,
+            images/1536/sofa-1536.jpg 1536w
           "
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt="Lampe artisanale Lumea"
+          alt="Canapé dans la boutique"
           loading="lazy"
           decoding="async"
         />
@@ -141,5 +145,73 @@
         </div>
       </div>
     </footer>
+
+    <div class="lightbox" id="lightbox">
+      <button class="close-btn" aria-label="Fermer">×</button>
+      <button class="nav-btn prev" aria-label="Image précédente">❮</button>
+      <img src="" alt="Image agrandie" />
+      <button class="nav-btn next" aria-label="Image suivante">❯</button>
+    </div>
+
+    <script>
+      const lightboxEnabled = () => window.innerWidth > 689; // depends on grid setup, gap and padding
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+      const closeBtn = lightbox.querySelector(".close-btn");
+      const prevBtn = lightbox.querySelector(".prev");
+      const nextBtn = lightbox.querySelector(".next");
+      const images = Array.from(document.querySelectorAll(".gallery img"));
+      let currentIndex = 0;
+
+      const openLightbox = (index) => {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex].src;
+        lightbox.style.display = "flex";
+      };
+
+      const showPrev = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+      };
+
+      const showNext = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+      };
+
+      images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+          if (!lightboxEnabled()) return;
+          openLightbox(index);
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.style.display = "none";
+      });
+
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showPrev();
+      });
+
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showNext();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.style.display === "flex") {
+          if (e.key === "Escape") lightbox.style.display = "none";
+          if (e.key === "ArrowLeft") showPrev();
+          if (e.key === "ArrowRight") showNext();
+        }
+      });
+    </script>
   </body>
 </html>
