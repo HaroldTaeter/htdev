@@ -214,18 +214,11 @@ svg {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  opacity: 0;
 }
 
 .carousel-slide.active {
   opacity: 1;
-}
-
-.carousel-slide.prev {
-  opacity: 0;
-}
-
-.carousel-slide.next {
-  opacity: 0;
 }
 
 .carousel-slide img {

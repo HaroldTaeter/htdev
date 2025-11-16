@@ -179,7 +179,8 @@ svg {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #3c2f23;
+  color: black;
+  text-shadow: 0 0 3px white;
   font-size: 3rem;
   padding: 6px 12px;
   border-radius: 50%;
@@ -192,11 +193,11 @@ svg {
 }
 
 .prev {
-  left: 10px;
+  left: 20px;
 }
 
 .next {
-  right: 10px;
+  right: 20px;
 }
 
 /* ===== VISIT ===== */
