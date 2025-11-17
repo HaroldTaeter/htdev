@@ -1,32 +1,55 @@
+/* =========================
+   COLOR VARIABLES
+   ========================= */
+:root {
+  --primary: #b43f3f;
+  --primary-hover: #922f2f;
+
+  --text-dark: #333;
+  --text-light: #fff;
+
+  --bg-body: #fdf8f3;
+  --bg-navbar: #b43f3f;
+  --bg-menu-btn: #b43f3f;
+  --bg-menu-btn-hover: #922f2f;
+  --bg-footer: #b43f3f;
+
+  --hero-overlay: brightness(65%);
+
+  --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
 /* poppins-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2');
 }
 
 /* poppins-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  src: url('fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-500.woff2') format('woff2');
 }
 
 /* poppins-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-600.woff2') format('woff2');
 }
 
 
-/* General Style */
+/* =========================
+   GENERAL STYLE
+   ========================= */
 html {
   scroll-behavior: smooth;
 }
@@ -34,13 +57,13 @@ html {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  color: #333;
-  background-color: #fdf8f3;
+  color: var(--text-dark);
+  background-color: var(--bg-body);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -50,10 +73,13 @@ svg {
   user-select: none;
 }
 
-/* Navbar */
+
+/* =========================
+   NAVBAR
+   ========================= */
 .navbar {
-  background-color: #b43f3f;
-  color: #fff;
+  background-color: var(--bg-navbar);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +104,7 @@ svg {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
 }
@@ -87,11 +113,14 @@ svg {
   text-decoration: underline;
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+   ========================= */
 .hero {
   position: relative;
   text-align: center;
-  color: #fff;
+  color: var(--text-light);
   overflow: hidden;
   padding: 0;
 }
@@ -101,7 +130,7 @@ svg {
   height: 70vh;
   height: 70dvh;
   object-fit: cover;
-  filter: brightness(65%);
+  filter: var(--hero-overlay);
 }
 
 .hero-content {
@@ -131,33 +160,42 @@ svg {
   font-weight: inherit;
 }
 
-/* Sections */
+
+/* =========================
+   SECTIONS
+   ========================= */
 section {
   padding: 4rem 1.5rem;
   text-align: center;
 }
 
 h2 {
-  color: #b43f3f;
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 
-/* Menu */
+
+/* =========================
+   MENU BUTTON
+   ========================= */
 .menu-link {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
-  background-color: #b43f3f;
-  color: #fff;
+  background-color: var(--bg-menu-btn);
+  color: var(--text-light);
   text-decoration: none;
   border-radius: 4px;
 }
 
 .menu-link:hover {
-  background-color: #922f2f;
+  background-color: var(--bg-menu-btn-hover);
 }
 
-/* Gallery */
+
+/* =========================
+   GALLERY
+   ========================= */
 .galerie {
   max-width: 900px;
   margin: 0 auto;
@@ -174,24 +212,29 @@ h2 {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* About */
+
+/* =========================
+   ABOUT
+   ========================= */
 .apropos p {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Contact */
+
+/* =========================
+   CONTACT
+   ========================= */
 .contact-info {
   margin-bottom: 2rem;
 }
@@ -202,10 +245,13 @@ h2 {
   border-radius: 12px;
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
-  background-color: #b43f3f;
-  color: #fff;
+  background-color: var(--bg-footer);
+  color: var(--text-light);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;

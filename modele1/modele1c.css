@@ -1,48 +1,75 @@
+:root {
+  --primary: #b46b4e;
+
+  --bg-body: #f8f7f4;
+  --text-dark: #2a2a2a;
+
+  --header-bg: #ece8e1;
+  --header-title: #3c2f23;
+  --header-subtitle: #6b5743;
+
+  --intro-text: #4a4a4a;
+
+  --gallery-btn: black;
+  --gallery-btn-shadow: white;
+
+  --visit-bg: #f4f1ec;
+  --visit-border: #e0ddd6;
+  --visit-title: #3c2f23;
+  --visit-subtitle: #6b5743;
+  --visit-address: #5a4a38;
+  --visit-hours: #3b3b3b;
+  --visit-invite: #6a5a4a;
+
+  --footer-bg: #2a2a2a;
+  --footer-text: #f0e8dc;
+  --footer-hover: #cbb79e;
+}
+
 /* cormorant-garamond-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2');
 }
 
 /* cormorant-garamond-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2');
 }
 
 /* poppins-300 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  src: url('fonts/poppins-v24-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-300.woff2') format('woff2');
 }
 
 /* poppins-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2');
 }
 
 /* poppins-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  src: url('fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/poppins-v24-latin-500.woff2') format('woff2');
 }
-
 
 *,
 *::before,
@@ -57,14 +84,14 @@ html {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #f8f7f4;
-  color: #2a2a2a;
+  background-color: var(--bg-body);
+  color: var(--text-dark);
   line-height: 1.7;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -90,7 +117,7 @@ svg {
 }
 
 .header-left {
-  background-color: #ece8e1;
+  background-color: var(--header-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,14 +133,14 @@ svg {
   font-weight: 600;
   font-size: 4em;
   margin: 0 0 0.3em;
-  color: #3c2f23;
+  color: var(--header-title);
   letter-spacing: 1px;
 }
 
 .header-text h2 {
   font-weight: 400;
   font-size: 1.3em;
-  color: #6b5743;
+  color: var(--header-subtitle);
 }
 
 .header-right img {
@@ -134,12 +161,12 @@ svg {
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   font-size: 2em;
-  color: #3c2f23;
+  color: var(--header-title);
 }
 
 .intro p {
   font-size: 1.05em;
-  color: #4a4a4a;
+  color: var(--intro-text);
   margin-top: 1em;
 }
 
@@ -155,7 +182,6 @@ svg {
   height: 95dvh;
   overflow: hidden;
 }
-
 
 .slides img {
   position: absolute;
@@ -179,8 +205,8 @@ svg {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: black;
-  text-shadow: 0 0 3px white;
+  color: var(--gallery-btn);
+  text-shadow: 0 0 3px var(--gallery-btn-shadow);
   font-size: 3rem;
   padding: 6px 12px;
   border-radius: 50%;
@@ -208,9 +234,9 @@ svg {
   justify-content: center;
   gap: 50px;
   padding: 80px 20px;
-  background-color: #f4f1ec;
-  border-top: 1px solid #e0ddd6;
-  border-bottom: 1px solid #e0ddd6;
+  background-color: var(--visit-bg);
+  border-top: 1px solid var(--visit-border);
+  border-bottom: 1px solid var(--visit-border);
 }
 
 .visit-info {
@@ -221,19 +247,19 @@ svg {
 .visit-info h2 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
-  color: #3c2f23;
+  color: var(--visit-title);
   margin-bottom: 0.6em;
 }
 
 .visit-info .address {
   font-weight: 500;
-  color: #5a4a38;
+  color: var(--visit-address);
   margin-bottom: 1em;
 }
 
 .visit-info .label {
   margin-bottom: 0.3em;
-  color: #6b5743;
+  color: var(--visit-subtitle);
   font-weight: 500;
 }
 
@@ -245,12 +271,12 @@ svg {
 
 .horaire-list li {
   margin: 0.3em 0;
-  color: #3b3b3b;
+  color: var(--visit-hours);
 }
 
 .visit-info .invite {
   font-style: italic;
-  color: #6a5a4a;
+  color: var(--visit-invite);
 }
 
 .map {
@@ -267,11 +293,10 @@ svg {
   border: 0;
 }
 
-
 /* ===== FOOTER ===== */
 footer {
-  background-color: #2a2a2a;
-  color: #f0e8dc;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   padding: 25px 40px;
   font-size: 0.95em;
 }
@@ -292,7 +317,7 @@ footer {
 }
 
 .footer-left a {
-  color: #f0e8dc;
+  color: var(--footer-text);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -302,16 +327,16 @@ footer {
 }
 
 .footer-left a:hover {
-  color: #cbb79e;
+  color: var(--footer-hover);
 }
 
 .footer-left a svg path {
-  fill: #f0e8dc;
+  fill: var(--footer-text);
   transition: fill 0.2s ease;
 }
 
 .footer-left a:hover svg path {
-  fill: #cbb79e;
+  fill: var(--footer-hover);
 }
 
 /* ===== RESPONSIVE ===== */

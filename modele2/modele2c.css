@@ -1,41 +1,75 @@
+/* =========================
+   COLOR VARIABLES
+   ========================= */
+:root {
+  --primary: #b46b4e;
+  --primary-hover: #8e523d;
+
+  --text-dark: #2a2a2a;
+  --text-medium: #4c4c4c;
+  --text-light: #555;
+  --text-hero-title: #2f2b28;
+  --text-hero-subtitle: #4c4c4c;
+  --text-logo: #3b2e2a;
+  --text-footer: #6a625c;
+
+  --bg-body: #faf8f6;
+  --bg-navbar: #f2ede8;
+  --bg-hero-text: #f7f3ef;
+  --bg-section: #fff;
+
+  --border-light: #e0dcd7;
+  --border-section: rgba(0, 0, 0, 0.05);
+
+  --collection-shadow: rgba(0, 0, 0, 0.05);
+
+  --footer-bg: #f2ede8;
+}
+
+/* =========================
+   FONTS
+   ========================= */
+
 /* playfair-display-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
 }
 
 /* playfair-display-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2');
 }
 
 /* open-sans-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2');
 }
 
 /* open-sans-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2');
 }
 
 
-/* Reset & base */
+/* =========================
+   RESET & BASE
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -44,8 +78,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #2a2a2a;
-  background-color: #faf8f6;
+  color: var(--text-dark);
+  background-color: var(--bg-body);
   line-height: 1.6;
 }
 
@@ -53,8 +87,9 @@ html {
   scroll-behavior: smooth;
 }
 
-a:focus-visible, button:focus-visible {
-  outline: 2px solid #b46b4e;
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -64,14 +99,17 @@ svg {
   user-select: none;
 }
 
-/* Navbar */
+
+/* =========================
+   NAVBAR
+   ========================= */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2ede8;
+  background-color: var(--bg-navbar);
   padding: 1rem 2rem;
-  border-bottom: 1px solid #e0dcd7;
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -80,7 +118,7 @@ svg {
 .logo {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
-  color: #3b2e2a;
+  color: var(--text-logo);
 }
 
 .nav-links {
@@ -91,15 +129,18 @@ svg {
 
 .nav-links a {
   text-decoration: none;
-  color: #3b2e2a;
+  color: var(--text-logo);
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #b46b4e;
+  color: var(--primary);
 }
 
-/* Hero split layout */
+
+/* =========================
+   HERO SPLIT LAYOUT
+   ========================= */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -118,20 +159,20 @@ svg {
 .hero-text {
   flex-direction: column;
   text-align: left;
-  background-color: #f7f3ef;
+  background-color: var(--bg-hero-text);
   padding: 4rem 3rem;
 }
 
 .hero-text h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.4rem;
-  color: #2f2b28;
+  color: var(--text-hero-title);
   margin-bottom: 1rem;
 }
 
 .hero-text p {
   font-size: 1.1rem;
-  color: #4c4c4c;
+  color: var(--text-medium);
   margin-bottom: 2rem;
 }
 
@@ -141,9 +182,12 @@ svg {
   object-fit: cover;
 }
 
-/* Buttons */
+
+/* =========================
+   BUTTONS
+   ========================= */
 .hero-btn {
-  background-color: #b46b4e;
+  background-color: var(--primary);
   color: #fff;
   text-decoration: none;
   padding: 0.9rem 1.8rem;
@@ -153,24 +197,27 @@ svg {
 }
 
 .hero-btn:hover {
-  background-color: #8e523d;
+  background-color: var(--primary-hover);
 }
 
-/* Sections */
+
+/* =========================
+   SECTIONS
+   ========================= */
 .section {
   max-width: 1000px;
   margin: 5rem auto 0 auto;
-  padding: 2rem; /* slightly more breathing room */
+  padding: 2rem;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--bg-section);
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px var(--border-section);
 }
 
 .section h2 {
   font-family: "Playfair Display", serif;
   font-size: 1.9rem;
-  color: #2e2b28;
+  color: var(--text-hero-title);
   margin-bottom: 1rem;
 }
 
@@ -179,7 +226,7 @@ svg {
 }
 
 .about p {
-  color: #555;
+  color: var(--text-light);
   max-width: 700px;
   margin: 1rem auto 0;
 }
@@ -188,7 +235,10 @@ svg {
   padding: 2rem 0rem;
 }
 
-/* ===== Carousel ===== */
+
+/* =========================
+   CAROUSEL
+   ========================= */
 .gallery-carousel {
   position: relative;
   margin-top: 2rem;
@@ -206,25 +256,28 @@ svg {
   height: 100%;
   width: auto;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px var(--collection-shadow);
   will-change: transform, opacity, filter;
   pointer-events: none;
 }
 
-/* Contact */
+
+/* =========================
+   CONTACT
+   ========================= */
 .contact .contact-list {
   margin-top: 1.5rem;
 }
 
 .contact .contact-list a {
   display: block;
-  color: #3b2e2a;
+  color: var(--text-logo);
   text-decoration: none;
   margin: 0.4rem 0;
 }
 
 .contact .contact-list a:hover {
-  color: #b46b4e;
+  color: var(--primary);
 }
 
 .map-container {
@@ -239,29 +292,35 @@ svg {
   border-radius: 10px;
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
-  background-color: #f2ede8;
+  background-color: var(--footer-bg);
   text-align: center;
   padding: 1.5rem;
-  color: #6a625c;
+  color: var(--text-footer);
   font-size: 0.9rem;
-  border-top: 1px solid #e0dcd7;
+  border-top: 1px solid var(--border-light);
   margin-top: 5rem;
 }
 
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 1040px) {
   .section {
-    margin: 5rem 1rem;        /* keep vertical spacing, add 1rem horizontal */
+    margin: 5rem 1rem;
   }
 }
 
-/* Hide side images and add side spacing on medium screens */
 @media (max-width: 768px) {
   .navbar {
     padding: 0.75rem 1.5rem;
   }
-  
+
   .logo {
     font-size: 1.2rem;
   }
@@ -278,16 +337,13 @@ footer {
   .hero-text {
     flex: 1 1 100%;
     padding: 2.5rem 1.5rem;
+    text-align: center;
   }
 
   .hero-image {
     width: 100%;
     height: 60vh;
-    padding: 0;   /* remove padding so image touches edges */
-  }
-
-  .hero-text {
-    text-align: center;
+    padding: 0;
   }
 
   .hero-text h2 {
@@ -300,7 +356,7 @@ footer {
 
   .section {
     padding: 3rem 1.25rem;
-    margin: 1rem; 
+    margin: 1rem;
   }
 
   .gallery-carousel {
@@ -312,12 +368,11 @@ footer {
   }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
   .navbar {
     padding: 0.5rem 1rem;
   }
-  
+
   .logo {
     font-size: 1.1rem;
   }
@@ -334,7 +389,7 @@ footer {
 
   .section {
     padding: 2.5rem 1rem;
-    margin: 0.75rem; 
+    margin: 0.75rem;
   }
 
   .gallery-carousel {

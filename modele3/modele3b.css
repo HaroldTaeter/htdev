@@ -1,41 +1,65 @@
+/* =========================
+   COLOR VARIABLES
+   ========================= */
+:root {
+  --primary: #2e5e49;
+  --primary-hover: #244a3a;
+
+  --accent-light: #f0f0f0;
+  --accent-shadow: rgba(46, 94, 73, 0.25);
+  --accent-shadow-hover: rgba(36, 74, 58, 0.35);
+
+  --text-dark: #333;
+  --text-light: #fff;
+
+  --bg-body: #fdf8f3;
+  --bg-navbar: #2e5e49;
+  --bg-footer: #2e5e49;
+
+  --hero-filter: brightness(65%);
+  --slider-btn: rgba(255, 255, 255, 0.7);
+}
+
 /* lora-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Lora';
   font-style: normal;
   font-weight: 500;
-  src: url('fonts/lora-v37-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/lora-v37-latin-500.woff2') format('woff2');
 }
 
 /* lora-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  src: url('fonts/lora-v37-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/lora-v37-latin-700.woff2') format('woff2');
 }
 
 /* montserrat-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/montserrat-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/montserrat-v31-latin-regular.woff2') format('woff2');
 }
 
 /* montserrat-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  src: url('fonts/montserrat-v31-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('fonts/montserrat-v31-latin-500.woff2') format('woff2');
 }
 
 
-/* General Style */
+/* =========================
+   GENERAL STYLE
+   ========================= */
 html {
   scroll-behavior: smooth;
 }
@@ -43,8 +67,8 @@ html {
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  color: #333;
-  background-color: #fdf8f3;
+  color: var(--text-dark);
+  background-color: var(--bg-body);
 }
 
 h1,
@@ -55,7 +79,7 @@ h3 {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -65,10 +89,13 @@ svg {
   user-select: none;
 }
 
-/* Navbar */
+
+/* =========================
+   NAVBAR
+   ========================= */
 .navbar {
-  background-color: #2e5e49;
-  color: #fff;
+  background-color: var(--bg-navbar);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +119,7 @@ svg {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
 }
@@ -101,11 +128,14 @@ svg {
   text-decoration: underline;
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+   ========================= */
 .hero {
   position: relative;
   text-align: center;
-  color: #fff;
+  color: var(--text-light);
   overflow: hidden;
   padding: 0;
   margin-bottom: 4rem;
@@ -116,7 +146,7 @@ svg {
   height: 90vh;
   height: 90dvh;
   object-fit: cover;
-  filter: brightness(65%);
+  filter: var(--hero-filter);
 }
 
 .hero-content {
@@ -141,45 +171,54 @@ svg {
   font-weight: inherit;
 }
 
-/* Sections */
+
+/* =========================
+   SECTIONS
+   ========================= */
 section {
   padding: 4rem 1.5rem;
   text-align: center;
 }
 
-/* Button */
+
+/* =========================
+   BUTTON
+   ========================= */
 .menu-link {
   display: inline-block;
   padding: 2rem 3rem;
-  background-color: #2e5e49;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--text-light);
   text-decoration: none;
   border-radius: 16px;
   max-width: 420px;
   margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(46, 94, 73, 0.25);
+  box-shadow: 0 4px 12px var(--accent-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .menu-link:hover {
-  background-color: #244a3a;
+  background-color: var(--primary-hover);
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(36, 74, 58, 0.35);
+  box-shadow: 0 6px 16px var(--accent-shadow-hover);
 }
 
 .menu-link h2 {
   margin: 0;
   font-size: 1.6rem;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .menu-link p {
   margin: 0.4rem 0 0;
   font-size: 1rem;
-  color: #f0f0f0;
+  color: var(--accent-light);
 }
 
-/* SLIDER */
+
+/* =========================
+   SLIDER
+   ========================= */
 .gallery-slider {
   max-width: 900px;
   margin: 0 auto;
@@ -218,14 +257,14 @@ section {
   background: none;
   border: none;
   font-size: 2.8rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--slider-btn);
   cursor: pointer;
   padding: 0 15px;
   z-index: 2;
 }
 
 .gallery-slider button:hover {
-  color: white;
+  color: var(--text-light);
 }
 
 .gallery-slider .prev {
@@ -236,7 +275,10 @@ section {
   right: 30px;
 }
 
-/* Contact */
+
+/* =========================
+   CONTACT
+   ========================= */
 .contact-info {
   margin-bottom: 2rem;
 }
@@ -247,10 +289,13 @@ section {
   border: 0;
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
-  background-color: #2e5e49;
-  color: #fff;
+  background-color: var(--bg-footer);
+  color: var(--text-light);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
@@ -283,7 +328,10 @@ footer p {
   margin: 0;
 }
 
-/* Responsive */
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 768px) {
   .hero-img {
     height: 60vh;

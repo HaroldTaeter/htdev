@@ -1,45 +1,56 @@
+:root {
+  --primary: #b46b4e;
+  --primary-hover: #8e523d;
+
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #f3f3f3;
+
+  --bg-white: #fff;
+  --bg-light: #f9f9f9;
+
+  --border-light: #eee;
+
+  --hero-overlay: rgba(0, 0, 0, 0.35);
+
+  --footer-text: #555;
+  --footer-bg: #f9f9f9;
+}
+
 /* playfair-display-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* playfair-display-600 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
   src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-600 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
   src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Reset & base */
@@ -51,7 +62,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #333;
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
@@ -61,7 +72,7 @@ html {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -77,14 +88,12 @@ svg {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
+  background-color: var(--bg-white);
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-light);
   z-index: 10;
-  /* ensures it stays above images/content */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  /* subtle separation */
 }
 
 .logo {
@@ -100,12 +109,12 @@ svg {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-dark);
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #b46b4e;
+  color: var(--primary);
 }
 
 /* Hero section */
@@ -138,7 +147,6 @@ svg {
   padding: 0 1rem;
 }
 
-
 .hero-content h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.2rem;
@@ -150,19 +158,19 @@ svg {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
-  color: #f3f3f3;
+  color: var(--text-light);
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--hero-overlay);
   z-index: 0;
 }
 
 .btn {
-  background-color: #b46b4e;
+  background-color: var(--primary);
   color: white;
   padding: 0.9rem 1.8rem;
   border-radius: 30px;
@@ -173,11 +181,11 @@ svg {
 }
 
 .btn:hover {
-  background-color: #8e523d;
+  background-color: var(--primary-hover);
 }
 
 .btn:focus {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -215,14 +223,13 @@ svg {
 /* About */
 .about p {
   margin-top: 1rem;
-  color: #555;
+  color: var(--text-medium);
 }
 
 /* Contact */
 .contact .contact-list {
   display: block;
   font-style: normal;
-  /* reset address italics */
   margin-top: 1.5rem;
 }
 
@@ -234,7 +241,7 @@ svg {
 }
 
 .contact .contact-list a:hover {
-  color: #b46b4e;
+  color: var(--primary);
 }
 
 .map-container {
@@ -254,11 +261,11 @@ svg {
 
 /* Footer */
 footer {
-  background-color: #f9f9f9;
+  background-color: var(--footer-bg);
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--footer-text);
 }
 
 /* =========================
@@ -308,14 +315,13 @@ footer {
   .section {
     padding: 3rem 1rem;
     max-width: 720px;
-    /* tighter measure for readability */
   }
 
   .section h2 {
     font-size: 1.6rem;
   }
 
-  /* Gallery: prefer two columns at this size */
+  /* Gallery: 2 columns */
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
@@ -334,7 +340,7 @@ footer {
    ========================= */
 @media (max-width: 480px) {
 
-  /* Navbar: stack neatly */
+  /* Navbar */
   .navbar {
     flex-direction: column;
     align-items: stretch;
@@ -388,7 +394,7 @@ footer {
     font-size: 1.4rem;
   }
 
-  /* Gallery: single column for clarity on small phones */
+  /* Gallery single column */
   .gallery {
     grid-template-columns: 1fr;
     gap: 0.6rem;

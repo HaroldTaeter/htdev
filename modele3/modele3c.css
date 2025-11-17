@@ -1,50 +1,71 @@
+/* =========================
+   COLOR VARIABLES
+   ========================= */
+:root {
+  --primary: #f2c94c;
+  --primary-dark: #d4a73f;
+  --accent: #b46b4e;
+
+  --text-main: #eaeaea;
+  --text-subtle: #ccc;
+  --text-inverse: #000;
+
+  --bg-body: #1a1a1a;
+  --bg-topbar: #111;
+  --bg-navbar: #222;
+  --bg-footer: #111;
+
+  --hero-filter: brightness(45%);
+
+  --menu-text: #dcdcdc;
+
+  --outline-color: #b46b4e;
+}
+
+/* =========================
+   FONTS
+   ========================= */
+
 /* fraunces-500 - latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Fraunces';
     font-style: normal;
     font-weight: 500;
     src: url('fonts/fraunces-v38-latin-500.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* fraunces-600 - latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Fraunces';
     font-style: normal;
     font-weight: 600;
     src: url('fonts/fraunces-v38-latin-600.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* fraunces-700 - latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Fraunces';
     font-style: normal;
     font-weight: 700;
     src: url('fonts/fraunces-v38-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* lato-regular - latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
     src: url('fonts/lato-v25-latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 
-
-/* General Style */
+/* =========================
+   GENERAL STYLE
+   ========================= */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
@@ -53,8 +74,8 @@ html {
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
-    background-color: #1a1a1a;
-    color: #eaeaea;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     font-size: 1.1rem;
     line-height: 1.8;
 }
@@ -73,7 +94,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid #b46b4e;
+    outline: 2px solid var(--outline-color);
     outline-offset: 3px;
     border-radius: 6px;
 }
@@ -83,19 +104,25 @@ svg {
   user-select: none;
 }
 
-/* Top contact bar */
+
+/* =========================
+   TOP CONTACT BAR
+   ========================= */
 .top-contact {
-    background-color: #111;
-    color: #ccc;
+    background-color: var(--bg-topbar);
+    color: var(--text-subtle);
     text-align: center;
     font-size: 0.9rem;
     padding: 0.5rem;
 }
 
-/* Navbar */
+
+/* =========================
+   NAVBAR
+   ========================= */
 .navbar {
-    background-color: #222;
-    color: #fff;
+    background-color: var(--bg-navbar);
+    color: var(--text-main);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,25 +152,28 @@ svg {
 .navbar a {
     font-size: 1.3rem;
     background-color: transparent;
-    color: #f2c94c;
+    color: var(--primary);
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid #f2c94c;
+    border: 2px solid var(--primary);
 }
 
 .navbar a:hover {
-    background-color: #f2c94c;
-    color: #000;
+    background-color: var(--primary);
+    color: var(--text-inverse);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+   ========================= */
 .hero {
     position: relative;
     text-align: center;
-    color: #fff;
+    color: var(--text-main);
     overflow: hidden;
     padding: 0;
 }
@@ -153,7 +183,7 @@ svg {
     height: 80vh;
     height: 80dvh;
     object-fit: cover;
-    filter: brightness(45%);
+    filter: var(--hero-filter);
 }
 
 .hero-content {
@@ -175,7 +205,7 @@ svg {
 }
 
 .cta {
-    color: #f2c94c;
+    color: var(--primary);
     font-weight: 700;
 }
 
@@ -185,22 +215,28 @@ svg {
   font-weight: inherit;
 }
 
-/* Sections */
+
+/* =========================
+   SECTIONS
+   ========================= */
 section {
     padding: 4rem 1.5rem;
     text-align: center;
 }
 
 h2 {
-    color: #f2c94c;
+    color: var(--primary);
     font-size: 2.6rem;
     margin-bottom: 1.2rem;
 }
 
-/* Menu Section */
+
+/* =========================
+   MENU SECTION
+   ========================= */
 .menu p {
     font-size: 1.3rem;
-    color: #dcdcdc;
+    color: var(--menu-text);
     margin-bottom: 2rem;
 }
 
@@ -227,7 +263,10 @@ h2 {
     }
 }
 
-/* Gallery */
+
+/* =========================
+   GALLERY
+   ========================= */
 .galerie {
     margin: 0;
     width: 100%;
@@ -255,14 +294,17 @@ h2 {
     display: block;
 }
 
-/* Small screens: single column */
+/* Single column on small screens */
 @media (max-width: 768px) {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Map Section */
+
+/* =========================
+   MAP SECTION
+   ========================= */
 .map-section {
     margin: 0;
     padding: 0;
@@ -275,10 +317,13 @@ h2 {
     border: none;
 }
 
-/* Footer */
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
-    background-color: #111;
-    color: #ccc;
+    background-color: var(--bg-footer);
+    color: var(--text-subtle);
     text-align: center;
     padding: 1.5rem 1rem;
     font-size: 0.95rem;
@@ -286,10 +331,13 @@ footer {
 
 .footer-contact {
     margin-bottom: 0.5rem;
-    color: #f2c94c;
+    color: var(--primary);
 }
 
-/* Improve PDF display on small screens */
+
+/* =========================
+   SMALL SCREEN PDF FALLBACK
+   ========================= */
 @media (max-width: 600px) {
     .menu-container iframe {
         display: none;
@@ -298,8 +346,8 @@ footer {
     .menu-download {
         display: inline-block;
         margin-top: 1rem;
-        background-color: #f2c94c;
-        color: #1a1a1a;
+        background-color: var(--primary);
+        color: var(--text-inverse);
         padding: 0.6rem 1.2rem;
         border-radius: 6px;
         font-weight: 600;
@@ -309,7 +357,7 @@ footer {
 
     .menu-download:hover {
         background-color: #fff;
-        color: #000;
+        color: var(--text-inverse);
     }
 
     .hero h2 {

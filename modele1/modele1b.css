@@ -1,58 +1,63 @@
+:root {
+  --primary: #b46b4e;
+  --text-dark: #2e2e2e;
+  --bg-light: #faf9f6;
+
+  --header-overlay: rgba(0, 0, 0, 0.4);
+  --slider-btn: rgba(255, 255, 255, 0.8);
+
+  --bullet: #555;
+
+  --footer-bg: #222;
+  --footer-text: #e0e0e0;
+  --footer-text-hover: #fff;
+  --footer-subtext: #d0d0d0;
+}
+
 /* playfair-display-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* playfair-display-600 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
   src: url('fonts/playfair-display-v40-latin-600.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-300 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
   src: url('fonts/open-sans-v44-latin-300.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/open-sans-v44-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-600 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
   src: url('fonts/open-sans-v44-latin-600.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
 
 *,
 *::before,
@@ -67,14 +72,14 @@ html {
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  color: #2e2e2e;
-  background-color: #faf9f6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
   line-height: 1.6;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #b46b4e;
+  outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -109,7 +114,7 @@ header {
 .header-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--header-overlay);
   z-index: 1;
 }
 
@@ -190,7 +195,7 @@ p {
   background: none;
   border: none;
   font-size: 3rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--slider-btn);
   cursor: pointer;
   padding: 0 20px;
   user-select: none;
@@ -230,7 +235,7 @@ p {
 
 .horaire-list li::before {
   content: "• ";
-  color: #555;
+  color: var(--bullet);
 }
 
 .map {
@@ -252,8 +257,8 @@ p {
 }
 
 footer {
-  background-color: #222;
-  color: #e0e0e0;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   padding: 20px 40px;
   font-size: 0.9em;
 }
@@ -274,7 +279,7 @@ footer {
 }
 
 .footer-left a {
-  color: #e0e0e0;
+  color: var(--footer-text);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -283,22 +288,22 @@ footer {
 }
 
 .footer-left a:hover {
-  color: #fff;
+  color: var(--footer-text-hover);
 }
 
 .footer-left a svg path {
-  fill: #e0e0e0;
+  fill: var(--footer-text);
   transition: fill 0.2s ease;
 }
 
 .footer-left a:hover svg path {
-  fill: #fff;
+  fill: var(--footer-text-hover);
 }
 
 .footer-right p {
   margin: 0;
   font-size: 0.9em;
-  color: #d0d0d0;
+  color: var(--footer-subtext);
 }
 
 @media (max-width: 800px) {
@@ -356,7 +361,6 @@ footer {
   }
 }
 
-/* ======== PHONES (max-width: 480px) ======== */
 @media (max-width: 480px) {
   header {
     height: 60vh;
