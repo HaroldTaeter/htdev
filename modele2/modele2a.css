@@ -221,6 +221,10 @@ svg {
 }
 
 /* About */
+#about {
+  padding: 8rem 2rem 4rem 2rem;
+}
+
 .about p {
   margin-top: 1rem;
   color: var(--text-medium);
@@ -321,6 +325,10 @@ footer {
     font-size: 1.6rem;
   }
 
+  #about {
+    padding: 6rem 2rem 3rem 2rem;
+  }
+
   /* Gallery: 2 columns */
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -392,6 +400,10 @@ footer {
 
   .section h2 {
     font-size: 1.4rem;
+  }
+
+  #about {
+    padding: 5rem 1rem 2.5rem 1rem;
   }
 
   /* Gallery single column */

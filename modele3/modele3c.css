@@ -2,24 +2,24 @@
    COLOR VARIABLES
    ========================= */
 :root {
-  --primary: #f2c94c;
-  --primary-dark: #d4a73f;
-  --accent: #b46b4e;
+    --primary: #f2c94c;
+    --primary-dark: #d4a73f;
+    --accent: #b46b4e;
 
-  --text-main: #eaeaea;
-  --text-subtle: #ccc;
-  --text-inverse: #000;
+    --text-main: #eaeaea;
+    --text-subtle: #ccc;
+    --text-inverse: #000;
 
-  --bg-body: #1a1a1a;
-  --bg-topbar: #111;
-  --bg-navbar: #222;
-  --bg-footer: #111;
+    --bg-body: #1a1a1a;
+    --bg-topbar: #111;
+    --bg-navbar: #222;
+    --bg-footer: #111;
 
-  --hero-filter: brightness(45%);
+    --hero-filter: brightness(45%);
 
-  --menu-text: #dcdcdc;
+    --menu-text: #dcdcdc;
 
-  --outline-color: #b46b4e;
+    --outline-color: #b46b4e;
 }
 
 /* =========================
@@ -101,7 +101,7 @@ button:focus-visible {
 
 img,
 svg {
-  user-select: none;
+    user-select: none;
 }
 
 
@@ -111,11 +111,26 @@ svg {
 .top-contact {
     background-color: var(--bg-topbar);
     color: var(--text-subtle);
-    text-align: center;
     font-size: 0.9rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    flex-wrap: wrap;
+    /* allows controlled wrapping */
 }
 
+.top-contact .item {
+    white-space: nowrap;
+    /* prevents bad breaks */
+}
+
+.top-contact .separator {
+    color: var(--text-subtle);
+}
 
 /* =========================
    NAVBAR
@@ -210,9 +225,10 @@ svg {
 }
 
 .phone-link {
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+    white-space: nowrap;
 }
 
 
@@ -257,13 +273,6 @@ h2 {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .menu-container iframe {
-        height: 600px;
-    }
-}
-
-
 /* =========================
    GALLERY
    ========================= */
@@ -294,14 +303,6 @@ h2 {
     display: block;
 }
 
-/* Single column on small screens */
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 /* =========================
    MAP SECTION
    ========================= */
@@ -330,15 +331,47 @@ footer {
 }
 
 .footer-contact {
-    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
     color: var(--primary);
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
 }
 
+.footer-contact .item {
+    white-space: nowrap;
+}
 
-/* =========================
-   SMALL SCREEN PDF FALLBACK
-   ========================= */
+.footer-contact .separator {
+    color: var(--text-subtle);
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu-container iframe {
+        height: 600px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
+    .top-contact {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .top-contact .separator {
+        display: none;
+    }
+
     .menu-container iframe {
         display: none;
     }
@@ -360,7 +393,31 @@ footer {
         color: var(--text-inverse);
     }
 
+    .footer-contact {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .footer-contact .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        padding: 0.75rem 1.5rem;
+
+    }
+
+    .navbar a {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
