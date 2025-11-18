@@ -8,6 +8,19 @@
       content="Lumea est une boutique de décoration et de mobilier qui propose une sélection d’objets intemporels pour créer des intérieurs chaleureux et harmonieux. Entre design contemporain et charme artisanal, chaque pièce est choisie pour sa qualité, sa beauté et son authenticité."
     />
     <title>Modèle 1C</title>
+    <link
+      rel="preload"
+      as="image"
+      href="images/1536/facade-1536.jpg"
+      imagesrcset="
+      images/480/facade-480.jpg    480w,
+      images/800/facade-800.jpg    800w,
+      images/1024/facade-1024.jpg 1024w,
+      images/1536/facade-1536.jpg 1536w
+    "
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="modele1c.css" />
   </head>
 
@@ -31,6 +44,8 @@
           sizes="(max-width: 768px) 100vw, 50vw"
           alt="Vitrine de la boutique Lumea"
           fetchpriority="high"
+          width="1536"
+          height="1024"
         />
       </div>
     </header>
@@ -57,10 +72,12 @@
               images/1536/interior-1536.jpg 1536w
             "
             sizes="100vw"
-            class="active"
             alt="Intérieur de la boutique Lumea"
             loading="lazy"
             decoding="async"
+            width="1536"
+            height="1024"
+            class="active"
           />
           <img
             src="images/1536/meuble-1536.jpg"
@@ -74,6 +91,8 @@
             alt="Meuble en vente"
             loading="lazy"
             decoding="async"
+            width="1536"
+            height="1024"
           />
           <img
             src="images/1536/sofa-1536.jpg"
@@ -87,6 +106,8 @@
             alt="Canapé dans la boutique"
             loading="lazy"
             decoding="async"
+            width="1536"
+            height="1024"
           />
         </div>
         <button class="prev" aria-label="Image précédente">&#10094;</button>

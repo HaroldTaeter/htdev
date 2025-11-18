@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modèle 3A</title>
+    <link
+      rel="preload"
+      as="image"
+      href="images/1536/interieur-1536.jpg"
+      imagessrcset="
+        images/480/interieur-480.jpg    480w,
+        images/800/interieur-800.jpg    800w,
+        images/1024/interieur-1024.jpg 1024w,
+        images/1536/interieur-1536.jpg 1536w
+      "
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="modele3a.css" />
   </head>
   <body>
@@ -34,12 +47,17 @@
           alt="Intérieur chaleureux de la pizzeria Bella Vita"
           class="hero-img"
           fetchpriority="high"
+          width="1536"
+          height="1024"
         />
 
         <div class="hero-content">
           <h2>Pizzeria Bella Vita</h2>
           <p>Saveurs italiennes authentiques, préparées avec passion.</p>
-          <p class="cta">Réserver au  <a href="tel:0412345678" class="phone-link">04 12 34 56 78</a></p>
+          <p class="cta">
+            Réserver au
+            <a href="tel:0412345678" class="phone-link">04 12 34 56 78</a>
+          </p>
         </div>
       </section>
 
@@ -72,8 +90,9 @@
             loading="lazy"
             decoding="async"
             alt="Pizza Margherita"
+            width="1536"
+            height="1024"
           />
-          
           <img
             src="images/1536/four-1536.jpg"
             srcset="
@@ -86,6 +105,8 @@
             loading="lazy"
             decoding="async"
             alt="Cuisson au feu de bois"
+            width="1536"
+            height="1024"
           />
           <img
             src="images/1536/pizza2-1536.jpg"
@@ -99,6 +120,8 @@
             loading="lazy"
             decoding="async"
             alt="Pizza 4 fromages"
+            width="1536"
+            height="1024"
           />
           <img
             src="images/1536/preparation-1536.jpg"
@@ -112,6 +135,8 @@
             loading="lazy"
             decoding="async"
             alt="Preparation de pizzas"
+            width="1536"
+            height="1024"
           />
         </div>
       </section>

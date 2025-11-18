@@ -8,6 +8,19 @@
       content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
     />
     <title>Modèle 2A</title>
+    <link
+      rel="preload"
+      as="image"
+      href="images/1536/nova-1536.jpg"
+      imagessrcset="
+        images/480/nova-480.jpg    480w,
+        images/800/nova-800.jpg    800w,
+        images/1024/nova-1024.jpg 1024w,
+        images/1536/nova-1536.jpg 1536w
+      "
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="modele2a.css" />
   </head>
   <body>
@@ -33,6 +46,8 @@
           alt="Intérieur de la boutique Nova"
           class="hero-img"
           fetchpriority="high"
+          width="1536"
+          height="1024"
         />
 
         <div class="hero-content">
@@ -75,6 +90,8 @@
             loading="lazy"
             decoding="async"
             alt="Tenue élégante femme"
+            width="1024"
+            height="1536"
           />
           <img
             src="images/1024/look2-1024.jpg"
@@ -90,6 +107,8 @@
             loading="lazy"
             decoding="async"
             alt="Tenue décontractée homme"
+            width="1024"
+            height="1536"
           />
           <img
             src="images/1024/look3-1024.jpg"
@@ -105,6 +124,8 @@
             loading="lazy"
             decoding="async"
             alt="Veste moderne"
+            width="1024"
+            height="1536"
           />
           <img
             src="images/1024/look4-1024.jpg"
@@ -120,6 +141,8 @@
             loading="lazy"
             decoding="async"
             alt="Ensemble estival pour femme"
+            width="1024"
+            height="1536"
           />
         </div>
       </section>

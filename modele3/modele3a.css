@@ -101,9 +101,8 @@ svg {
   position: sticky;
   top: 0;
   z-index: 100;
-
-  /* subtle modern shadow for depth */
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  border-bottom: solid 1px white;
 }
 
 .logo {
@@ -240,8 +239,8 @@ h2 {
 
 .gallery-grid img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
-  object-fit: cover;
   box-shadow: 0 2px 8px var(--shadow-light);
 }
 
