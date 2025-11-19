@@ -1,3 +1,7 @@
+/* =========================================
+   ORIGINAL CSS (unchanged)
+   ========================================= */
+
 :root {
   --primary: #b46b4e;
   --secondary: #3b2d20;
@@ -55,7 +59,6 @@
   font-weight: 500;
   src: url('fonts/work-sans-v24-latin-500.woff2') format('woff2');
 }
-
 
 *,
 *::before,
@@ -174,11 +177,6 @@ svg {
   cursor: pointer;
 }
 
-.gallery img:hover {
-  transform: scale(1.02);
-  opacity: 0.95;
-}
-
 /* ===== VISIT ===== */
 .visit {
   max-width: 800px;
@@ -245,17 +243,9 @@ footer {
   transition: color 0.3s ease;
 }
 
-.footer-left a:hover {
-  color: var(--footer-text-hover);
-}
-
 .footer-left a svg path {
   fill: var(--footer-text);
   transition: fill 0.2s ease;
-}
-
-.footer-left a:hover svg path {
-  fill: var(--footer-text-hover);
 }
 
 /* ===== LIGHTBOX ===== */
@@ -289,10 +279,6 @@ footer {
   z-index: 1001;
 }
 
-.close-btn:hover {
-  color: #ccc;
-}
-
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -306,11 +292,6 @@ footer {
   line-height: 1;
   transition: color 0.2s ease, transform 0.1s ease;
   z-index: 1001;
-}
-
-.nav-btn:hover {
-  color: #ccc;
-  transform: translateY(-50%) scale(1.1);
 }
 
 .nav-btn.prev {
@@ -369,5 +350,33 @@ footer {
 @media (max-width: 340px) {
   .gallery {
     padding: 0;
+  }
+}
+
+/* =========================================
+   HOVER STYLES ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================= */
+@media (hover: hover) and (pointer: fine) {
+
+  .gallery img:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+
+  .footer-left a:hover {
+    color: var(--footer-text-hover);
+  }
+
+  .footer-left a:hover svg path {
+    fill: var(--footer-text-hover);
+  }
+
+  .close-btn:hover {
+    color: #ccc;
+  }
+
+  .nav-btn:hover {
+    color: #ccc;
+    transform: translateY(-50%) scale(1.1);
   }
 }

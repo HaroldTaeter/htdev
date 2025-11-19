@@ -214,10 +214,6 @@ svg {
   transition: all 0.3s ease;
 }
 
-.gallery-slider button:hover {
-  font-size: 4rem;
-}
-
 .prev {
   left: 20px;
 }
@@ -326,17 +322,9 @@ footer {
   margin: 0 5px;
 }
 
-.footer-left a:hover {
-  color: var(--footer-hover);
-}
-
 .footer-left a svg path {
   fill: var(--footer-text);
   transition: fill 0.2s ease;
-}
-
-.footer-left a:hover svg path {
-  fill: var(--footer-hover);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -377,5 +365,24 @@ footer {
   .slides {
     height: 70vh;
     height: 70dvh;
+  }
+}
+
+/* =========================================================
+   HOVER BEHAVIOUR ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .gallery-slider button:hover {
+    font-size: 4rem;
+  }
+
+  .footer-left a:hover {
+    color: var(--footer-hover);
+  }
+
+  .footer-left a:hover svg path {
+    fill: var(--footer-hover);
   }
 }

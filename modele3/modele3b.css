@@ -124,10 +124,6 @@ svg {
   font-weight: 500;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-
 
 /* =========================
    HERO
@@ -184,7 +180,6 @@ section {
 /* =========================
    BUTTON
    ========================= */
-
 #menu {
   padding: 8rem 1.5rem 4rem 1.5rem;
 }
@@ -200,12 +195,6 @@ section {
   margin: 0 auto;
   box-shadow: 0 4px 12px var(--accent-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.menu-link:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px var(--accent-shadow-hover);
 }
 
 .menu-link h2 {
@@ -268,10 +257,6 @@ section {
   z-index: 2;
 }
 
-.gallery-slider button:hover {
-  color: var(--text-light);
-}
-
 .gallery-slider .prev {
   left: 30px;
 }
@@ -323,10 +308,6 @@ footer {
 .social-icon svg {
   display: block;
   transition: opacity 0.3s ease;
-}
-
-.social-icon:hover svg {
-  opacity: 0.8;
 }
 
 footer p {
@@ -400,5 +381,30 @@ footer p {
 
   #galerie {
     padding: 4rem 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   HOVER BEHAVIOR ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+@media (hover: hover) and (pointer: fine) {
+
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+
+  .menu-link:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--accent-shadow-hover);
+  }
+
+  .gallery-slider button:hover {
+    color: var(--text-light);
+  }
+
+  .social-icon:hover svg {
+    opacity: 0.8;
   }
 }

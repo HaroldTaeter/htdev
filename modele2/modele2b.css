@@ -10,34 +10,28 @@
 /* poppins-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/poppins-v24-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* poppins-600 - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   src: url('fonts/poppins-v24-latin-600.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* dm-serif-display-regular - latin */
 @font-face {
   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'DM Serif Display';
   font-style: normal;
   font-weight: 400;
   src: url('fonts/dm-serif-display-v17-latin-regular.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 
@@ -105,10 +99,6 @@ svg {
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
-}
-
 /* Hero */
 .hero {
   position: relative;
@@ -168,10 +158,6 @@ svg {
   text-decoration: none;
   transition: background 0.3s;
   display: inline-block;
-}
-
-.hero-btn:hover {
-  background: var(--secondary);
 }
 
 /* Sections */
@@ -241,7 +227,6 @@ svg {
   z-index: 2;
 }
 
-
 /* Map section */
 .map-section p {
   margin-bottom: 1.5rem;
@@ -281,10 +266,6 @@ footer {
   margin: 0.2rem 0;
   font-weight: 500;
   transition: color 0.3s;
-}
-
-.footer-contact a:hover {
-  color: var(--primary);
 }
 
 .footer-copy {
@@ -353,5 +334,23 @@ footer {
 
   #collection {
     padding: 3rem 0.5rem;
+  }
+}
+
+/* =========================================================
+   HOVER BEHAVIOR ONLY FOR DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+@media (hover: hover) and (pointer: fine) {
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .hero-btn:hover {
+    background: var(--secondary);
+  }
+
+  .footer-contact a:hover {
+    color: var(--primary);
   }
 }

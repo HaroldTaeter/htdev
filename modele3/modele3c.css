@@ -118,19 +118,17 @@ svg {
     justify-content: center;
     align-items: center;
     gap: 0.8rem;
-
     flex-wrap: wrap;
-    /* allows controlled wrapping */
 }
 
 .top-contact .item {
     white-space: nowrap;
-    /* prevents bad breaks */
 }
 
 .top-contact .separator {
     color: var(--text-subtle);
 }
+
 
 /* =========================
    NAVBAR
@@ -173,12 +171,6 @@ svg {
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid var(--primary);
-}
-
-.navbar a:hover {
-    background-color: var(--primary);
-    color: var(--text-inverse);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 
@@ -273,6 +265,7 @@ h2 {
     display: none;
 }
 
+
 /* =========================
    GALLERY
    ========================= */
@@ -302,6 +295,7 @@ h2 {
     object-fit: cover;
     display: block;
 }
+
 
 /* =========================
    MAP SECTION
@@ -348,6 +342,10 @@ footer {
     color: var(--text-subtle);
 }
 
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 768px) {
     .hero h2 {
         font-size: 2.5rem;
@@ -384,13 +382,7 @@ footer {
         padding: 0.6rem 1.2rem;
         border-radius: 6px;
         font-weight: 600;
-        text-decoration: none;
         transition: all 0.3s ease;
-    }
-
-    .menu-download:hover {
-        background-color: #fff;
-        color: var(--text-inverse);
     }
 
     .footer-contact {
@@ -406,7 +398,6 @@ footer {
 @media (max-width: 420px) {
     .navbar {
         padding: 0.75rem 1.5rem;
-
     }
 
     .navbar a {
@@ -419,5 +410,23 @@ footer {
 
     .hero h2 {
         font-size: 2rem;
+    }
+}
+
+
+/* =========================================================
+   HOVER BEHAVIOR ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+@media (hover: hover) and (pointer: fine) {
+
+    .navbar a:hover {
+        background-color: var(--primary);
+        color: var(--text-inverse);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .menu-download:hover {
+        background-color: #fff;
+        color: var(--text-inverse);
     }
 }

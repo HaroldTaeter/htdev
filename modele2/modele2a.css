@@ -113,10 +113,6 @@ svg {
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
-}
-
 /* Hero section */
 .hero {
   position: relative;
@@ -180,10 +176,6 @@ svg {
   transition: background-color 0.3s;
 }
 
-.btn:hover {
-  background-color: var(--primary-hover);
-}
-
 .btn:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
@@ -242,10 +234,6 @@ svg {
   margin: 0.5rem 0;
   text-decoration: none;
   color: inherit;
-}
-
-.contact .contact-list a:hover {
-  color: var(--primary);
 }
 
 .map-container {
@@ -417,5 +405,23 @@ footer {
     height: 220px;
     border-radius: 6px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* =========================================================
+   HOVER BEHAVIOR ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+@media (hover: hover) and (pointer: fine) {
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .btn:hover {
+    background-color: var(--primary-hover);
+  }
+
+  .contact .contact-list a:hover {
+    color: var(--primary);
   }
 }

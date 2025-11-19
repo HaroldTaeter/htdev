@@ -203,10 +203,6 @@ p {
   z-index: 2;
 }
 
-.gallery-slider button:hover {
-  color: white;
-}
-
 .gallery-slider .prev {
   left: 25px;
 }
@@ -287,17 +283,9 @@ footer {
   transition: color 0.2s ease;
 }
 
-.footer-left a:hover {
-  color: var(--footer-text-hover);
-}
-
 .footer-left a svg path {
   fill: var(--footer-text);
   transition: fill 0.2s ease;
-}
-
-.footer-left a:hover svg path {
-  fill: var(--footer-text-hover);
 }
 
 .footer-right p {
@@ -305,6 +293,10 @@ footer {
   font-size: 0.9em;
   color: var(--footer-subtext);
 }
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media (max-width: 800px) {
   header {
@@ -415,5 +407,24 @@ footer {
 
   .footer-left {
     justify-content: center;
+  }
+}
+
+/* =========================================================
+   HOVER BEHAVIOUR ONLY ON DEVICES THAT SUPPORT HOVER
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .gallery-slider button:hover {
+    color: white;
+  }
+
+  .footer-left a:hover {
+    color: var(--footer-text-hover);
+  }
+
+  .footer-left a:hover svg path {
+    fill: var(--footer-text-hover);
   }
 }
