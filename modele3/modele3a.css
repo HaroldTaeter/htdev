@@ -177,6 +177,7 @@ svg {
 section {
   padding: 4rem 1.5rem;
   text-align: center;
+  scroll-margin-top: 60px;
 }
 
 h2 {
@@ -190,7 +191,7 @@ h2 {
    MENU BUTTON
    ========================= */
 #menu {
-  padding: 8rem 1.5rem 4rem 1.5rem;
+  margin-top: 4rem;
 }
 
 .menu-link {
@@ -299,6 +300,10 @@ footer p {
   .navbar ul {
     font-size: 0.85rem;
     gap: 0.8rem;
+  }
+
+  #galerie {
+    padding: 4rem 0.75rem;
   }
 }
 

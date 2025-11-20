@@ -181,7 +181,7 @@ section {
    BUTTON
    ========================= */
 #menu {
-  padding: 8rem 1.5rem 4rem 1.5rem;
+  margin-top: 4rem;
 }
 
 .menu-link {
@@ -359,7 +359,7 @@ footer p {
   .navbar ul {
     gap: 0.9rem;
   }
-  
+
   #galerie {
     padding: 4rem 1rem;
   }
