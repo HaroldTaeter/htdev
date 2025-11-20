@@ -71,6 +71,10 @@ body {
   background-color: var(--bg-body);
 }
 
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--primary);
