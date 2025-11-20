@@ -178,24 +178,24 @@ svg {
 
 .slides {
   position: relative;
-  height: 95vh;
-  height: 95dvh;
+  height: auto;
   overflow: hidden;
 }
 
 .slides img {
-  position: absolute;
-  inset: 0;
+  position: static;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   transition: opacity 1s ease;
+  display: none;
   opacity: 0;
   pointer-events: none;
 }
 
 .slides img.active {
   opacity: 1;
+  display: block;
   pointer-events: auto;
 }
 
@@ -209,7 +209,6 @@ svg {
   text-shadow: 0 0 3px var(--gallery-btn-shadow);
   font-size: 3rem;
   padding: 6px 12px;
-  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -337,6 +336,7 @@ footer {
   .header-left,
   .header-right {
     flex: 1 1 100%;
+    min-height: unset;
   }
 
   .header-text h1 {
@@ -345,11 +345,6 @@ footer {
 
   .intro {
     margin: 80px auto;
-  }
-
-  .slides {
-    height: 85vh;
-    height: 85dvh;
   }
 }
 
@@ -360,11 +355,6 @@ footer {
 
   footer {
     text-align: center;
-  }
-
-  .slides {
-    height: 70vh;
-    height: 70dvh;
   }
 }
 
