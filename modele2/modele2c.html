@@ -24,16 +24,16 @@
     <link rel="stylesheet" href="modele2c.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar" aria-label="Navigation principale">
-        <h1 class="logo">Nova Boutique</h1>
-        <ul class="nav-links">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#collection">Collection</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <nav class="navbar" aria-label="Navigation principale">
+      <h1 class="logo">Nova Boutique</h1>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
+    <header>
       <div class="hero">
         <div class="hero-text">
           <h2>Vêtements contemporains & intemporels</h2>
@@ -333,6 +333,18 @@
         "mouseleave",
         () => (timer = setInterval(next, INTERVAL))
       );
+    </script>
+    <script>
+      function updateScrollOffsets() {
+        const navbarHeight = document.querySelector(".navbar").offsetHeight;
+        document.documentElement.style.setProperty(
+          "--nav-offset",
+          navbarHeight + "px"
+        );
+      }
+
+      window.addEventListener("load", updateScrollOffsets);
+      window.addEventListener("resize", updateScrollOffsets);
     </script>
   </body>
 </html>

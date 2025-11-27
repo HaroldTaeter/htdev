@@ -182,24 +182,26 @@ svg {
 
 .slides {
   position: relative;
+  aspect-ratio: 3 / 2;
   height: auto;
+  width: 100%;
   overflow: hidden;
 }
 
 .slides img {
-  position: static;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   transition: opacity 1s ease;
-  display: none;
   opacity: 0;
   pointer-events: none;
 }
 
 .slides img.active {
   opacity: 1;
-  display: block;
   pointer-events: auto;
 }
 

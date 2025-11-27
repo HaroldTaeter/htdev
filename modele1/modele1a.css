@@ -97,8 +97,8 @@ svg {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  height: 85vh;
-  height: 85dvh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;

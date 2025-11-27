@@ -208,6 +208,7 @@ svg {
   background-color: var(--bg-section);
   border-radius: 12px;
   box-shadow: 0 3px 10px var(--border-section);
+  scroll-margin-top: var(--nav-offset);
 }
 
 .section h2 {

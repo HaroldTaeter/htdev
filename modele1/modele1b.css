@@ -172,7 +172,7 @@ p {
 .gallery-slider .slides {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3 / 2;
 }
 
 .gallery-slider .slides img {
