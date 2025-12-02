@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HTDev &mdash; Modèles de site web</title>
+    <title>HTDev &mdash; Design de sites web</title>
     <meta
       name="description"
       content="Découvrez les modèles de sites web professionnels HTDev — des designs élégants, rapides et personnalisables pour boutiques, restaurants et ateliers."
     />
-
     <meta
       name="keywords"
       content="modèles de sites web, HTDev, création de site, design responsive, commerce local, restaurant, boutique, atelier, Belgique, France"
@@ -25,10 +24,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://htdev.be/" />
-    <meta
-      property="og:image"
-      content="https://htdev.be/images/1024/modele1-1024.jpg"
-    />
+
     <meta name="robots" content="index, follow" />
 
     <link rel="canonical" href="https://htdev.be/" />
@@ -84,216 +80,210 @@
     </script>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="logo">HTDev.</div>
+      <a href="mailto:contact@htdev.be" class="nav-link">Prendre contact</a>
+    </nav>
+
     <header class="hero">
-      <div class="hero-content">
+      <div class="hero-main">
+        <h1 class="hero-title">
+          Votre activité,<br />
+          <span class="text-gradient">en ligne.</span>
+        </h1>
         <p class="tagline">
-          Des modèles à personnaliser pour présenter votre activité en ligne
-          avec simplicité et élégance.
+          Des designs élégants et performants pour présenter votre savoir-faire
+          avec simplicité.
         </p>
-        <a href="#templates" class="cta-button">Découvrir les modèles</a>
+        <a href="#templates" class="cta-button">Voir les modèles</a>
       </div>
 
-      <div class="hero-details">
-        <h1>Ce que comprend chaque site</h1>
-        <ul>
-          <li>Nom de domaine personnalisé</li>
-          <li>Design responsive (ordinateur et mobile)</li>
-          <li>Connexion sécurisée (HTTPS)</li>
-          <li>Optimisation des performances</li>
-          <li>Référencement naturel (SEO)</li>
-        </ul>
-      </div>
+      <ul class="hero-features">
+        <li class="feature-badge">Domaine Personnalisé</li>
+        <li class="feature-badge">100% Responsive</li>
+        <li class="feature-badge">Sécurisé HTTPS</li>
+        <li class="feature-badge">SEO Optimisé</li>
+        <li class="feature-badge">Ultra Rapide</li>
+      </ul>
     </header>
 
-    <main id="templates" class="card-list">
-      <section class="card">
-        <div class="card-image">
-          <a
-            href="modele1/modele1a.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/1536/modele1-1536.jpg"
-              srcset="
-                images/480/modele1-480.jpg    480w,
-                images/800/modele1-800.jpg    800w,
-                images/1024/modele1-1024.jpg 1024w,
-                images/1536/modele1-1536.jpg 1536w
-              "
-              sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Aperçu du modèle 1 — design sobre et chaleureux pour petits commerces"
-              loading="lazy"
-              decoding="async"
-              width="1536"
-              height="2635"
-            />
-          </a>
+    <main id="templates" class="showcase">
+      <h2 class="sr-only">Nos Modèles de Sites</h2>
+
+      <article class="project-card">
+        <div class="card-bg">
+          <img
+            src="images/1536/modele1-1536.jpg"
+            srcset="
+              images/480/modele1-480.jpg    480w,
+              images/800/modele1-800.jpg    800w,
+              images/1024/modele1-1024.jpg 1024w,
+              images/1536/modele1-1536.jpg 1536w
+            "
+            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+            alt="Modèle 1"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <div class="card-content">
-          <h3>
-            Modèle 1 &mdash; Un design sobre et chaleureux pour les petits
-            commerces.
-          </h3>
-          <p>
-            Ce template met en valeur vos produits grâce à une grande image
-            d’accueil, une galerie fluide et une mise en page claire et
-            responsive. Idéal pour présenter une boutique, un atelier ou un
-            espace de création avec élégance et simplicité.
-          </p>
-          <div class="card-models">
+        <div class="card-overlay">
+          <div class="card-header">
+            <h3>
+              <a
+                href="modele1/modele1a.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stretched-link"
+              >
+                Modèle 1 &mdash; Boutique
+              </a>
+            </h3>
+            <p>Design sobre et chaleureux. Idéal pour ateliers et créateurs.</p>
+          </div>
+          <div class="card-actions">
             <a
               href="modele1/modele1a.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 1A</a
+              class="btn-outline"
+              >Version A</a
             >
             <a
               href="modele1/modele1b.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 1B</a
+              class="btn-outline"
+              >Version B</a
             >
             <a
               href="modele1/modele1c.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 1C</a
+              class="btn-outline"
+              >Version C</a
             >
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
-        <div class="card-image">
-          <a
-            href="modele2/modele2a.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/1024/modele2-1024.jpg"
-              srcset="
-                images/480/modele2-480.jpg    480w,
-                images/800/modele2-800.jpg    800w,
-                images/1024/modele2-1024.jpg 1024w
-              "
-              sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Aperçu du modèle 2 — design moderne et raffiné pour les commerces élégants"
-              loading="lazy"
-              decoding="async"
-              width="1536"
-              height="3727"
-            />
-          </a>
+      <article class="project-card">
+        <div class="card-bg">
+          <img
+            src="images/1024/modele2-1024.jpg"
+            srcset="
+              images/480/modele2-480.jpg    480w,
+              images/800/modele2-800.jpg    800w,
+              images/1024/modele2-1024.jpg 1024w
+            "
+            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+            alt="Modèle 2"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <div class="card-content">
-          <h3>
-            Modèle 2 &mdash; Un style moderne et raffiné pour les commerces
-            élégants.
-          </h3>
-          <p>
-            Ce template met l’accent sur l’esthétique visuelle et la fluidité de
-            navigation, avec une grande image d’accueil et une galerie épurée. Idéal pour une boutique de
-            vêtements, un atelier ou toute marque souhaitant une image sobre,
-            contemporaine et soignée.
-          </p>
-          <div class="card-models">
+        <div class="card-overlay">
+          <div class="card-header">
+            <h3>
+              <a
+                href="modele2/modele2a.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stretched-link"
+              >
+                Modèle 2 &mdash; Commerce
+              </a>
+            </h3>
+            <p>Style moderne et raffiné. Pour les marques contemporaines.</p>
+          </div>
+          <div class="card-actions">
             <a
               href="modele2/modele2a.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 2A</a
+              class="btn-outline"
+              >Version A</a
             >
             <a
               href="modele2/modele2b.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 2B</a
+              class="btn-outline"
+              >Version B</a
             >
             <a
               href="modele2/modele2c.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 2C</a
+              class="btn-outline"
+              >Version C</a
             >
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="card">
-        <div class="card-image">
-          <a
-            href="modele3/modele3a.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/1024/modele3-1024.jpg"
-              srcset="
-                images/480/modele3-480.jpg    480w,
-                images/800/modele3-800.jpg    800w,
-                images/1024/modele3-1024.jpg 1024w
-              "
-              sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Aperçu du modèle 3 — design chaleureux et artisanal pour les restaurants"
-              loading="lazy"
-              decoding="async"
-              width="1536"
-              height="2901"
-            />
-          </a>
+      <article class="project-card">
+        <div class="card-bg">
+          <img
+            src="images/1024/modele3-1024.jpg"
+            srcset="
+              images/480/modele3-480.jpg    480w,
+              images/800/modele3-800.jpg    800w,
+              images/1024/modele3-1024.jpg 1024w
+            "
+            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+            alt="Modèle 3"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <div class="card-content">
-          <h3>
-            Modèle 3 &mdash; Un design chaleureux et artisanal pour les
-            restaurants.
-          </h3>
-          <p>
-            Ce template met en valeur l’authenticité et l’ambiance conviviale
-            d’un établissement culinaire, avec une grande image immersive, une
-            galerie élégante et une mise en avant claire des informations
-            essentielles. Idéal pour un restaurant, une pizzeria ou un café.
-          </p>
-
-          <div class="card-models">
+        <div class="card-overlay">
+          <div class="card-header">
+            <h3>
+              <a
+                href="modele3/modele3a.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stretched-link"
+              >
+                Modèle 3 &mdash; Restaurant
+              </a>
+            </h3>
+            <p>Authentique et convivial. Parfait pour restaurants et cafés.</p>
+          </div>
+          <div class="card-actions">
             <a
               href="modele3/modele3a.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 3A</a
+              class="btn-outline"
+              >Version A</a
             >
             <a
               href="modele3/modele3b.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 3B</a
+              class="btn-outline"
+              >Version B</a
             >
             <a
               href="modele3/modele3c.html"
-              class="button"
               target="_blank"
               rel="noopener noreferrer"
-              >Modèle 3C</a
+              class="btn-outline"
+              >Version C</a
             >
           </div>
         </div>
-      </section>
+      </article>
     </main>
 
     <footer class="footer">
-      <div class="footer-left">
-        <a href="mailto:contact@htdev.be">contact@htdev.be</a>
+      <div class="footer-content">
+        <div class="footer-brand">HTDev © 2025</div>
+        <a href="mailto:contact@htdev.be" class="footer-email"
+          >contact@htdev.be</a
+        >
       </div>
-      <div class="footer-right">© 2025 HTDev — Tous droits réservés</div>
     </footer>
   </body>
 </html>
