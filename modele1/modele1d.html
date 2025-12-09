@@ -8,25 +8,25 @@
       name="description"
       content="Lumea est une boutique de décoration et de mobilier qui propose une sélection d’objets intemporels pour créer des intérieurs chaleureux et harmonieux. Entre design contemporain et charme artisanal, chaque pièce est choisie pour sa qualité, sa beauté et son authenticité."
     />
-    <title>Modèle 1A</title>
+    <title>Modèle 1B</title>
     <link
       rel="preload"
       as="image"
       href="images/1536/facade-1536.jpg"
       imagesrcset="
-        images/480/facade-480.jpg    480w,
-        images/800/facade-800.jpg    800w,
-        images/1024/facade-1024.jpg 1024w,
-        images/1536/facade-1536.jpg 1536w
-      "
+      images/480/facade-480.jpg    480w,
+      images/800/facade-800.jpg    800w,
+      images/1024/facade-1024.jpg 1024w,
+      images/1536/facade-1536.jpg 1536w
+    "
       imagesizes="100vw"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="modele1a.css" />
+    <link rel="stylesheet" href="modele1d.css" />
   </head>
 
   <body>
-    <header class="hero">
+    <header>
       <img
         src="images/1536/facade-1536.jpg"
         srcset="
@@ -37,20 +37,20 @@
         "
         sizes="100vw"
         alt="Vitrine de la boutique Lumea"
-        class="hero-img"
+        class="header-img"
         fetchpriority="high"
         width="1536"
         height="1024"
       />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
+      <div class="header-overlay"></div>
+      <div class="header-content">
         <h1>Lumea</h1>
         <h2>L’art de l’intérieur chaleureux</h2>
       </div>
     </header>
 
     <main>
-      <section class="intro">
+      <section class="section intro">
         <h2>Entre design contemporain et savoir-faire artisanal</h2>
         <p>
           Lumea est une boutique de décoration et de mobilier qui propose une
@@ -60,75 +60,79 @@
         </p>
       </section>
 
-      <section class="gallery">
-        <img
-          src="images/1536/interior-1536.jpg"
-          srcset="
-            images/480/interior-480.jpg    480w,
-            images/800/interior-800.jpg    800w,
-            images/1024/interior-1024.jpg 1024w,
-            images/1536/interior-1536.jpg 1536w
-          "
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt="Intérieur de la boutique Lumea"
-          loading="lazy"
-          decoding="async"
-          width="1536"
-          height="1024"
-        />
-        <img
-          src="images/1536/meuble-1536.jpg"
-          srcset="
-            images/480/meuble-480.jpg    480w,
-            images/800/meuble-800.jpg    800w,
-            images/1024/meuble-1024.jpg 1024w,
-            images/1536/meuble-1536.jpg 1536w
-          "
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt="Meuble en vente"
-          loading="lazy"
-          decoding="async"
-          width="1536"
-          height="1024"
-        />
-        <img
-          src="images/1536/sofa-1536.jpg"
-          srcset="
-            images/480/sofa-480.jpg    480w,
-            images/800/sofa-800.jpg    800w,
-            images/1024/sofa-1024.jpg 1024w,
-            images/1536/sofa-1536.jpg 1536w
-          "
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt="Canapé dans la boutique"
-          loading="lazy"
-          decoding="async"
-          width="1536"
-          height="1024"
-        />
-      </section>
-
-      <section class="visit">
-        <div class="visit-info">
-          <h2>Nous rendre visite</h2>
-          <p>📍 Parc de la Boverie 3, 4020 Liège</p>
-          <p>⏰ Ouverture:</p>
-          <ul class="horaire-list">
-            <li>Mardi de 10h à 18h</li>
-            <li>Mercredi de 10h à 18h</li>
-            <li>Jeudi de 10h à 18h</li>
-            <li>Vendredi de 10h à 17h</li>
-          </ul>
-          <p>Venez découvrir notre sélection d'objets et de mobilier.</p>
+      <section class="section gallery-slider">
+        <div class="slides">
+          <img
+            src="images/1536/interior-1536.jpg"
+            srcset="
+              images/480/interior-480.jpg    480w,
+              images/800/interior-800.jpg    800w,
+              images/1024/interior-1024.jpg 1024w,
+              images/1536/interior-1536.jpg 1536w
+            "
+            sizes="100vw"
+            alt="Intérieur de la boutique Lumea"
+            loading="lazy"
+            decoding="async"
+            width="1536"
+            height="1024"
+            class="active"
+          />
+          <img
+            src="images/1536/meuble-1536.jpg"
+            srcset="
+              images/480/meuble-480.jpg    480w,
+              images/800/meuble-800.jpg    800w,
+              images/1024/meuble-1024.jpg 1024w,
+              images/1536/meuble-1536.jpg 1536w
+            "
+            sizes="100vw"
+            alt="Meuble en vente"
+            loading="lazy"
+            decoding="async"
+            width="1536"
+            height="1024"
+          />
+          <img
+            src="images/1536/sofa-1536.jpg"
+            srcset="
+              images/480/sofa-480.jpg    480w,
+              images/800/sofa-800.jpg    800w,
+              images/1024/sofa-1024.jpg 1024w,
+              images/1536/sofa-1536.jpg 1536w
+            "
+            sizes="100vw"
+            alt="Canapé dans la boutique"
+            loading="lazy"
+            decoding="async"
+            width="1536"
+            height="1024"
+          />
         </div>
 
+        <button class="prev" aria-label="Image précédente">&#10094;</button>
+        <button class="next" aria-label="Image suivante">&#10095;</button>
+      </section>
+
+      <section class="section visit">
+        <div class="visit-info">
+          <h2>Nous rendre visite</h2>
+          <span>📍 Parc de la Boverie 3, 4020 Liège</span>
+          <div>
+            ⏰ Ouverture:
+            <ul class="horaire-list">
+              <li>Mardi de 10h à 18h</li>
+              <li>Mercredi de 10h à 18h</li>
+              <li>Jeudi de 10h à 18h</li>
+              <li>Vendredi de 10h à 17h</li>
+            </ul>
+          </div>
+          <p>Venez découvrir notre sélection d'objets et de mobilier.</p>
+        </div>
         <div class="map">
           <iframe
             title="Localisation de Lumea sur Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
-            width="600"
-            height="450"
-            style="border: 0"
             allowfullscreen=""
             loading="lazy"
             decoding="async"
@@ -142,7 +146,9 @@
       <div class="footer-container">
         <div class="footer-left">
           <a href="mailto:lumea-boutique@gmail.com">lumea-boutique@gmail.com</a>
+          <span>•</span>
           <a href="tel:+32123456789">+32 123 45 67 89</a>
+          <span>•</span>
           <a
             href="https://www.instagram.com/"
             target="_blank"
@@ -173,72 +179,54 @@
     <a href="/cookies.html" style="color: #cccccc; text-decoration: none;">Politique de Cookies</a>
   </div>
 
-    <div class="lightbox" id="lightbox">
-      <button class="close-btn" aria-label="Fermer">×</button>
-      <button class="nav-btn prev" aria-label="Image précédente">❮</button>
-      <img src="" alt="Image agrandie" />
-      <button class="nav-btn next" aria-label="Image suivante">❯</button>
-    </div>
-
     <script>
-      const lightboxEnabled = () => window.innerWidth > 689; // depends on grid setup, gap and padding
+      const slides = document.querySelectorAll(".gallery-slider .slides img");
+      const prevBtn = document.querySelector(".gallery-slider .prev");
+      const nextBtn = document.querySelector(".gallery-slider .next");
 
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = lightbox.querySelector("img");
-      const closeBtn = lightbox.querySelector(".close-btn");
-      const prevBtn = lightbox.querySelector(".prev");
-      const nextBtn = lightbox.querySelector(".next");
-      const images = Array.from(document.querySelectorAll(".gallery img"));
-      let currentIndex = 0;
+      let current = 0;
 
-      const openLightbox = (index) => {
-        currentIndex = index;
-        lightboxImg.src = images[currentIndex].src;
-        lightbox.style.display = "flex";
-      };
-
-      const showPrev = () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-      };
-
-      const showNext = () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-      };
-
-      images.forEach((img, index) => {
-        img.addEventListener("click", () => {
-          if (!lightboxEnabled()) return;
-          openLightbox(index);
+      const showSlide = (index) => {
+        slides.forEach((img, i) => {
+          img.classList.toggle("active", i === index);
         });
+      };
+
+      prevBtn.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
       });
 
-      closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
+      nextBtn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
       });
 
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.style.display = "none";
+      let startX = 0;
+      let endX = 0;
+
+      const slidesContainer = document.querySelector(".gallery-slider .slides");
+
+      slidesContainer.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
       });
 
-      prevBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        showPrev();
+      slidesContainer.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
       });
 
-      nextBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        showNext();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (lightbox.style.display === "flex") {
-          if (e.key === "Escape") lightbox.style.display = "none";
-          if (e.key === "ArrowLeft") showPrev();
-          if (e.key === "ArrowRight") showNext();
+      const handleSwipe = () => {
+        const diff = endX - startX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            current = (current - 1 + slides.length) % slides.length;
+          } else {
+            current = (current + 1) % slides.length;
+          }
+          showSlide(current);
         }
-      });
+      };
     </script>
   </body>
 </html>

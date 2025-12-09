@@ -113,6 +113,12 @@ svg {
   height: 100%;
   object-fit: cover;
   filter: brightness(75%) contrast(95%);
+  animation: breathe 20s infinite alternate ease-in-out;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
 }
 
 .hero-overlay {
