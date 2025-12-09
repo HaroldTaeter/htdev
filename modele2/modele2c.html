@@ -1,365 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3R24R6J6D6"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-3R24R6J6D6");
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
-    />
     <title>Modèle 2C</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="image"
-      href="images/1536/nova-1536.jpg"
-      imagesrcset="
-        images/480/nova-480.jpg    480w,
-        images/800/nova-800.jpg    800w,
-        images/1024/nova-1024.jpg 1024w,
-        images/1536/nova-1536.jpg 1536w
-      "
-      imagesizes="(min-width: 768px) 50vw, 100vw"
-      fetchpriority="high"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
     />
+
     <link rel="stylesheet" href="modele2c.css" />
   </head>
   <body>
-    <nav class="navbar" aria-label="Navigation principale">
-      <h1 class="logo">Nova Boutique</h1>
-      <ul class="nav-links">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">PHYSIO<span class="accent-text">RESTORE</span></a>
+        <ul class="nav-links">
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">L'Équipe</a></li>
+          <li><a href="#services">Expertise</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn-nav">Prendre RDV</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
     </nav>
 
-    <header>
-      <div class="hero">
-        <div class="hero-text">
-          <h2>Vêtements contemporains & intemporels</h2>
-          <p>
-            Des pièces soigneusement choisies pour refléter votre style, saison
-            après saison.
-          </p>
-          <a href="#collection" class="hero-btn">Découvrir la collection</a>
-        </div>
-
-        <div class="hero-image">
-          <img
-            src="images/1536/nova-1536.jpg"
-            srcset="
-              images/480/nova-480.jpg    480w,
-              images/800/nova-800.jpg    800w,
-              images/1024/nova-1024.jpg 1024w,
-              images/1536/nova-1536.jpg 1536w
-            "
-            sizes="(min-width: 768px) 50vw, 100vw"
-            alt="Intérieur de la boutique Nova"
-            fetchpriority="high"
-            width="1536"
-            height="1024"
-          />
+    <header id="home" class="hero">
+      <div class="hero-bg">
+          <img src="https://images.unsplash.com/photo-1574680096141-1cddd32e24c7?q=80&w=1000&auto=format&fit=crop" alt="Active Recovery">
+          <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container hero-content">
+        <h1>Retrouvez votre <br /> <span class="highlight">Mobilité Maximale.</span></h1>
+        <p>
+          Kinésithérapie du sport et rééducation fonctionnelle. 
+          De la blessure à la performance, nous construisons votre retour au sommet.
+        </p>
+        <div class="btn-group">
+            <a href="#contact" class="btn-primary">Planifier un Bilan</a>
+            <a href="#services" class="btn-outline">Nos Services</a>
         </div>
       </div>
     </header>
 
-    <main>
-      <section id="about" class="section about">
-        <h2>À propos</h2>
-        <p>
-          Chez Nova Boutique, nous croyons en une mode simple, élégante et
-          durable. Chaque vêtement est sélectionné pour sa qualité, son confort
-          et son intemporalité. Nous travaillons avec des créateurs locaux et
-          des marques européennes pour proposer des collections à la fois
-          modernes et responsables.
-        </p>
-      </section>
+    <section id="about" class="section-padding">
+      <div class="container about-grid">
+        <div class="about-text">
+          <div class="section-label">À Propos</div>
+          <h2>Votre Spécialiste <br>Alex Mercer</h2>
+          <p class="lead">"Ne subissez plus la douleur. Dominez-la."</p>
+          <p>
+            Avec plus de 10 ans d'expérience clinique et terrain, mon approche combine thérapie manuelle et renforcement actif. Je ne me contente pas de soigner la zone douloureuse, j'analyse votre biomécanique pour prévenir la récidive.
+          </p>
+          <ul class="check-list">
+            <li>Thérapie Manuelle Certifiée</li>
+            <li>Spécialiste en Rééducation Sportive</li>
+            <li>Approche Active & Fonctionnelle</li>
+          </ul>
+        </div>
+        
+        <div class="about-image-wrapper">
+             <div class="img-frame">
+                 <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Alex Mercer">
+             </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="collection" class="section collection">
-        <h2>Notre collection</h2>
+    <section id="services" class="section-padding bg-gray">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nos Domaines d'Intervention</h2>
+          <div class="separator"></div>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon">01</div>
+                <h3>Rééducation Sportive</h3>
+                <p>Protocoles de reprise d'appui, plyométrie et retour terrain post-blessure (LCA, entorses, déchirures).</p>
+            </div>
 
-        <div
-          class="gallery-carousel"
-          role="region"
-          aria-label="Carrousel de looks"
-          aria-live="off"
-        >
-          <div class="carousel-stage">
-            <img
-              src="images/1024/look1-1024.jpg"
-              srcset="
-                images/480/look1-480.jpg    480w,
-                images/800/look1-800.jpg    800w,
-                images/1024/look1-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Tenue élégante femme"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look2-1024.jpg"
-              srcset="
-                images/480/look2-480.jpg    480w,
-                images/800/look2-800.jpg    800w,
-                images/1024/look2-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Tenue décontractée homme"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look3-1024.jpg"
-              srcset="
-                images/480/look3-480.jpg    480w,
-                images/800/look3-800.jpg    800w,
-                images/1024/look3-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Veste moderne"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look4-1024.jpg"
-              srcset="
-                images/480/look4-480.jpg    480w,
-                images/800/look4-800.jpg    800w,
-                images/1024/look4-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Ensemble estival pour femme"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look1-1024.jpg"
-              srcset="
-                images/480/look1-480.jpg    480w,
-                images/800/look1-800.jpg    800w,
-                images/1024/look1-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Tenue élégante femme"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look2-1024.jpg"
-              srcset="
-                images/480/look2-480.jpg    480w,
-                images/800/look2-800.jpg    800w,
-                images/1024/look2-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Tenue décontractée homme"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look3-1024.jpg"
-              srcset="
-                images/480/look3-480.jpg    480w,
-                images/800/look3-800.jpg    800w,
-                images/1024/look3-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Veste moderne"
-              width="1024"
-              height="1536"
-            />
-            <img
-              src="images/1024/look4-1024.jpg"
-              srcset="
-                images/480/look4-480.jpg    480w,
-                images/800/look4-800.jpg    800w,
-                images/1024/look4-1024.jpg 1024w
-              "
-              sizes="(min-width: 1040px) 1000px, 100vw"
-              loading="lazy"
-              decoding="async"
-              alt="Ensemble estival pour femme"
-              width="1024"
-              height="1536"
-            />
+            <div class="service-card">
+                <div class="card-icon">02</div>
+                <h3>Thérapie Manuelle</h3>
+                <p>Mobilisations articulaires et tissulaires pour restaurer l'amplitude de mouvement immédiate.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">03</div>
+                <h3>Dry Needling</h3>
+                <p>Traitement invasif des points gâchettes (trigger points) pour stopper les douleurs musculaires.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">04</div>
+                <h3>Post-Opératoire</h3>
+                <p>Suivi rigoureux post-chirurgie orthopédique pour garantir une cicatrisation optimale.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="container footer-content">
+          <div class="contact-left">
+              <h2>Contactez-nous</h2>
+              <p>Prêt à commencer ? Prenez rendez-vous.</p>
+              
+              <div class="info-block">
+                  <p><strong>Adresse :</strong> Parc de la Boverie 3, 4020 Liège</p>
+                  <p><strong>Téléphone :</strong> +32 123 45 67 89</p>
+                  <p><strong>Horaires :</strong> Lun-Ven 08h-19h</p>
+              </div>
           </div>
-        </div>
-        <!-- /Carousel -->
-      </section>
-
-      <section id="contact" class="section contact">
-        <h2>Nous contacter</h2>
-        <p>Venez nous rendre visite ou écrivez-nous pour toute demande.</p>
-        <address class="contact-list">
-          <a
-            href="https://maps.google.com/?q=Parc de la Boverie 3, 4020 Liège"
-            target="_blank"
-            rel="noopener noreferrer"
-            >📍 Parc de la Boverie 3, 4020 Liège</a
-          >
-          <a href="tel:+32123456789">📞 +32 123 45 67 89</a>
-          <a href="mailto:contact@novaboutique.be"
-            >✉️ contact@novaboutique.be</a
-          >
-        </address>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
-            allowfullscreen=""
-            loading="lazy"
-            decoding="async"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation de Nova Boutique à Liège"
-          ></iframe>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 Nova Boutique — Mode contemporaine</p>
+          
+          <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+          </div>
+      </div>
+      <div class="copyright">
+          © 2025 PhysioRestore.
+      </div>
     </footer>
 
     <script>
-      const stage = document.querySelector(".carousel-stage");
-      const slides = Array.from(stage.querySelectorAll("img"));
-      let current = 0;
-      const DURATION = 600; // keep your value
-      const INTERVAL = 3000; // keep your value (change if you like)
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
 
-      function render() {
-        const n = slides.length;
-        const prev = (current - 1 + n) % n;
-        const next = (current + 1) % n;
-        const prevPrev = (current - 2 + n) % n; // far-left (leaving)
-        const futureNext = (current + 2) % n; // far-right (upcoming)
-        const isSmall = window.innerWidth < 768;
-
-        slides.forEach((img, i) => {
-          img.style.position = "absolute";
-          img.style.top = "50%";
-          img.style.left = "50%";
-          img.style.transition = `transform ${DURATION}ms ease-in-out, opacity ${DURATION}ms ease-in-out, filter ${DURATION}ms ease-in-out`;
-
-          // Defaults (hidden)
-          let x = 0,
-            scale = 0.6,
-            opacity = 0,
-            gray = 100,
-            z = 1;
-
-          if (i === current) {
-            // Center
-            x = 0;
-            scale = 1;
-            opacity = 1;
-            gray = 0;
-            z = 3;
-            img.setAttribute("aria-hidden", "false");
-          } else if (i === prev && !isSmall) {
-            // Visible left (smaller)
-            x = -100;
-            scale = 0.82;
-            opacity = 0.55;
-            gray = 70;
-            z = 2;
-            img.setAttribute("aria-hidden", "true");
-          } else if (i === next && !isSmall) {
-            // Visible right (smaller)
-            x = 100;
-            scale = 0.82;
-            opacity = 0.55;
-            gray = 70;
-            z = 2;
-            img.setAttribute("aria-hidden", "true");
-          } else if (i === prevPrev && !isSmall) {
-            // Far-left (leaving)
-            x = -200;
-            scale = 0.7;
-            opacity = 0;
-            gray = 100;
-            z = 1;
-            img.setAttribute("aria-hidden", "true");
-          } else if (i === futureNext && !isSmall) {
-            // Far-right (upcoming)
-            x = 200;
-            scale = 0.7;
-            opacity = 0;
-            gray = 100;
-            z = 1;
-            img.setAttribute("aria-hidden", "true");
-          } else {
-            // Any other (hidden)
-            x = isSmall ? 0 : 200; // park off-screen; value doesn't matter on small where it's hidden
-            scale = 0.6;
-            opacity = 0;
-            gray = 100;
-            z = 1;
-            img.setAttribute("aria-hidden", "true");
-          }
-
-          img.style.transform = `translate(-50%, -50%) translateX(${x}%) scale(${scale})`;
-          img.style.opacity = String(opacity);
-          img.style.filter = `grayscale(${gray}%)`;
-          img.style.zIndex = String(z);
-        });
-      }
-
-      function next() {
-        current = (current + 1) % slides.length;
-        render();
-      }
-
-      render();
-      let timer = setInterval(next, INTERVAL);
-      window.addEventListener("resize", render);
-      stage.addEventListener("mouseenter", () => clearInterval(timer));
-      stage.addEventListener(
-        "mouseleave",
-        () => (timer = setInterval(next, INTERVAL))
-      );
-    </script>
-    <script>
-      function updateScrollOffsets() {
-        const navbarHeight = document.querySelector(".navbar").offsetHeight;
-        document.documentElement.style.setProperty(
-          "--nav-offset",
-          navbarHeight + "px"
-        );
-      }
-
-      window.addEventListener("load", updateScrollOffsets);
-      window.addEventListener("resize", updateScrollOffsets);
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+      });
     </script>
   </body>
 </html>

@@ -1,198 +1,175 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3R24R6J6D6"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-3R24R6J6D6");
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
-    />
     <title>Modèle 2A</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="image"
-      href="images/1536/nova-1536.jpg"
-      imagessrcset="
-        images/480/nova-480.jpg    480w,
-        images/800/nova-800.jpg    800w,
-        images/1024/nova-1024.jpg 1024w,
-        images/1536/nova-1536.jpg 1536w
-      "
-      imagesizes="100vw"
-      fetchpriority="high"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
     />
+
     <link rel="stylesheet" href="modele2a.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar" aria-label="Navigation principale">
-        <h1 class="logo">Nova Boutique</h1>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">Physio<span>Restore</span></a>
         <ul class="nav-links">
-          <li><a href="#about" aria-current="page">À propos</a></li>
-          <li><a href="#collection">Collection</a></li>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn-nav">Prendre RDV</a></li>
         </ul>
-      </nav>
-      <div class="hero">
-        <img
-          src="images/1536/nova-1536.jpg"
-          srcset="
-            images/480/nova-480.jpg    480w,
-            images/800/nova-800.jpg    800w,
-            images/1024/nova-1024.jpg 1024w,
-            images/1536/nova-1536.jpg 1536w
-          "
-          sizes="100vw"
-          alt="Intérieur de la boutique Nova"
-          class="hero-img"
-          fetchpriority="high"
-          width="1536"
-          height="1024"
-        />
-
-        <div class="hero-content">
-          <h2>Vêtements contemporains & intemporels</h2>
-          <p>
-            Des pièces soigneusement choisies pour refléter votre style, saison
-            après saison.
-          </p>
-          <a href="#collection" class="btn">Découvrir la collection</a>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <main>
-      <section id="about" class="section about">
-        <h2>À propos</h2>
+    <section id="home" class="hero">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1>Retrouvez votre mobilité. <br />Revivez pleinement.</h1>
         <p>
-          Chez Nova Boutique, nous croyons en une mode simple, élégante et
-          durable. Chaque vêtement est sélectionné pour sa qualité, son confort
-          et son intemporalité. Nous travaillons avec des créateurs locaux et
-          des marques européennes pour proposer des collections à la fois
-          modernes et responsables.
+          Une kinésithérapie professionnelle adaptée à vos objectifs. Des
+          blessures sportives aux douleurs chroniques, nous sommes là pour vous
+          aider à mieux bouger.
         </p>
-      </section>
+        <a href="#contact" class="btn-primary">Planifier un Bilan</a>
+      </div>
+    </section>
 
-      <section id="collection" class="section collection">
-        <h2>Notre collection</h2>
-        <div class="gallery">
+    <section id="about" class="section-padding">
+      <div class="container about-grid">
+        <div class="about-image">
           <img
-            src="images/1024/look1-1024.jpg"
-            srcset="
-              images/480/look1-480.jpg    480w,
-              images/800/look1-800.jpg    800w,
-              images/1024/look1-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Tenue élégante femme"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look2-1024.jpg"
-            srcset="
-              images/480/look2-480.jpg    480w,
-              images/800/look2-800.jpg    800w,
-              images/1024/look2-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Tenue décontractée homme"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look3-1024.jpg"
-            srcset="
-              images/480/look3-480.jpg    480w,
-              images/800/look3-800.jpg    800w,
-              images/1024/look3-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Veste moderne"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look4-1024.jpg"
-            srcset="
-              images/480/look4-480.jpg    480w,
-              images/800/look4-800.jpg    800w,
-              images/1024/look4-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Ensemble estival pour femme"
-            width="1024"
-            height="1536"
+            src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+            alt="Alex Mercer Kinésithérapeute"
           />
         </div>
-      </section>
+        <div class="about-text">
+          <h2>Votre Spécialiste</h2>
+          <p class="subtitle">Alex Mercer, Kinésithérapeute</p>
+          <p>
+            Avec plus de 10 ans d'expérience clinique, je crois en une approche
+            globale du rétablissement. Mon objectif n'est pas seulement de
+            traiter la douleur, mais d'identifier la cause profonde et de vous
+            donner les outils pour prévenir de futures blessures.
+          </p>
+          <ul class="about-list">
+            <li>Thérapie Manuelle Certifiée</li>
+            <li>Spécialiste en Rééducation Sportive</li>
+            <li>Soins Centrés sur le Patient</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <section id="contact" class="section contact">
-        <h2>Nous contacter</h2>
-        <p>Venez nous rendre visite ou écrivez-nous pour toute demande.</p>
-        <address class="contact-list">
-          <a
-            href="https://maps.google.com/?q=Parc de la Boverie 3, 4020 Liège"
-            target="_blank"
-            rel="noopener noreferrer"
-            >📍 Parc de la Boverie 3, 4020 Liège</a
-          >
-          <a href="tel:+32123456789">📞 +32 123 45 67 89</a>
-          <a href="mailto:contact@novaboutique.be"
-            >✉️ contact@novaboutique.be</a
-          >
-        </address>
+    <section id="services" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nos Services</h2>
+          <p>
+            Des traitements fondés sur des preuves scientifiques, conçus pour
+            votre corps.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon">Sport</div>
+            <h3>Rééducation Sportive</h3>
+            <p>
+              Récupérez plus vite des entorses et blessures musculaires grâce à
+              des protocoles d'exercices ciblés.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">Mains</div>
+            <h3>Thérapie Manuelle</h3>
+            <p>
+              Mobilisation manuelle pour réduire la douleur, améliorer
+              l'amplitude de mouvement et diminuer les raideurs.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">Aiguille</div>
+            <h3>Dry Needling</h3>
+            <p>
+              Technique avancée pour relâcher les points de tension (trigger
+              points) et soulager les douleurs musculaires.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">Corps</div>
+            <h3>Post-Opératoire</h3>
+            <p>
+              Rééducation guidée suite à une chirurgie orthopédique pour assurer
+              un retour à l'activité en toute sécurité.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="map-container">
+    <footer id="contact" class="section-padding">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Contactez-nous</h2>
+          <p>
+            Prêt à commencer votre rétablissement ? Appelez-nous ou visitez
+            notre cabinet.
+          </p>
+
+          <div class="info-item">
+            <strong>Adresse :</strong><br />
+            Parc de la Boverie 3<br />
+            4020 Liège
+          </div>
+
+          <div class="info-item">
+            <strong>Téléphone :</strong><br />
+            +32 123 45 67 89
+          </div>
+
+          <div class="info-item">
+            <strong>Horaires :</strong><br />
+            Lun - Ven : 08h00 - 19h00<br />
+            Sam : 09h00 - 13h00
+          </div>
+        </div>
+
+        <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
             allowfullscreen=""
             loading="lazy"
             decoding="async"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation de Nova Boutique à Liège"
-          ></iframe>
+            title="Localisation de PhysioRestore à Liège"
+          >
+          </iframe>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 Nova Boutique — Mode contemporaine</p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 PhysioRestore. Tous droits réservés.</p>
+      </div>
     </footer>
+
+    <script>
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
+
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+      });
+    </script>
   </body>
 </html>
