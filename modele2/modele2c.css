@@ -244,13 +244,8 @@ img {
 
 .highlight {
     color: var(--primary);
-    /* Make the stroke slightly thicker if you want, now that it's behind the text */
     -webkit-text-stroke: 4px var(--white);
-
-    /* This is the magic line: Draw stroke first, then fill */
     paint-order: stroke fill;
-
-    /* Your glow effect */
     text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
 }
 
