@@ -171,7 +171,7 @@ button:focus-visible {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(3rem, 10vw, 7.5rem);
     font-weight: 700;
     line-height: 1.1;
     margin: 0 0 1.5rem;
@@ -186,14 +186,14 @@ button:focus-visible {
 }
 
 .tagline {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.1rem, 2vw, 1.75rem);
     color: var(--text-muted);
     max-width: 500px;
     margin-bottom: 2.5rem;
     font-weight: 300;
 }
 
-.cta-button {
+.action-button {
     display: inline-block;
     background-color: var(--text-main);
     color: var(--bg-color);
@@ -203,7 +203,7 @@ button:focus-visible {
     transition: transform 0.2s ease, background-color 0.2s;
 }
 
-.cta-button:hover {
+.action-button:hover {
     background-color: var(--accent);
     transform: translateY(-2px);
 }
@@ -383,6 +383,8 @@ button:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+    gap: 1.5rem;
 }
 
 .footer-brand {
@@ -390,13 +392,27 @@ button:focus-visible {
     color: var(--text-main);
 }
 
-.footer-email {
-    font-size: 1.1rem;
-    color: var(--text-main);
-    position: relative;
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
-.footer-email::after {
+.footer-link {
+    font-size: 1rem; /* Slightly smaller than before for balance */
+    color: var(--text-muted); /* Start muted */
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Make the email slightly more prominent if desired, or keep both same */
+.footer-link:hover, 
+.footer-link:focus {
+    color: var(--text-main);
+}
+
+.footer-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -409,10 +425,31 @@ button:focus-visible {
     transition: transform 0.3s ease;
 }
 
-.footer-email:hover::after {
+.footer-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
+
+/* RESPONSIVE FOOTER adjustments */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
+
 
 /* =========================================
    RESPONSIVE
@@ -445,6 +482,22 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* =========================================
+   LARGE SCREEN TYPOGRAPHY OVERRIDES
+   ========================================= */
+@media (min-width: 1024px) {
+    /* Increase Card Titles */
+    .card-header h3 {
+        font-size: 2rem; /* Was 1.5rem */
+    }
+
+    /* Increase Card Description Text */
+    .card-header p {
+        font-size: 1.15rem; /* Was 0.95rem */
+        max-width: 100%; /* Allow text to use full width since it is bigger */
+    }
 }
 
 

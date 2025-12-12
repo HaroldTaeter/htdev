@@ -1,245 +1,350 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <script src="/cookie-consent.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
-    />
-    <title>Modèle 4B</title>
-    <link
-      rel="preload"
-      as="image"
-      href="images/1536/nova-1536.jpg"
-      imagessrcset="
-        images/480/nova-480.jpg    480w,
-        images/800/nova-800.jpg    800w,
-        images/1024/nova-1024.jpg 1024w,
-        images/1536/nova-1536.jpg 1536w
-      "
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
-    <link rel="stylesheet" href="modele4b.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar" aria-label="Navigation principale">
-        <h1 class="logo">Nova Boutique</h1>
-      </nav>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier Urbain | Liège</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --bg-deep: #050507;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --accent-glow: #6366f1;
+        }
 
-      <div class="hero">
-        <img
-          src="images/1536/nova-1536.jpg"
-          srcset="
-            images/480/nova-480.jpg    480w,
-            images/800/nova-800.jpg    800w,
-            images/1024/nova-1024.jpg 1024w,
-            images/1536/nova-1536.jpg 1536w
-          "
-          sizes="100vw"
-          alt="Intérieur de la boutique Nova"
-          class="hero-img"
-          fetchpriority="high"
-          width="1536"
-          height="1024"
-        />
-        <div class="hero-content">
-          <h2>Vêtements contemporains & intemporels</h2>
-          <p>
-            Des pièces soigneusement choisies pour refléter votre style, saison
-            après saison.
-          </p>
-          <a href="#collection" class="hero-btn">Découvrir la collection</a>
+        body {
+            background-color: var(--bg-deep);
+            color: #e2e8f0;
+        }
+
+        /* Smooth gradient text with compatibility fix */
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mobile Menu Styles for Animation */
+        .mobile-menu-closed {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(-20px);
+        }
+        
+        .mobile-menu-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        body: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        night: '#050507',
+                        neon: '#818cf8',
+                    },
+                    screens: {
+                        'pointer': {'raw': '(hover: hover)'},
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body antialiased selection:bg-neon selection:text-night">
+
+    <div class="md:hidden fixed top-0 w-full z-50 px-6 py-4 glass-panel border-t-0 border-x-0 flex justify-between items-center bg-night/80 backdrop-blur-md">
+        <span class="font-display font-bold text-lg tracking-tighter text-white">L'ATELIER.</span>
+        <button id="menu-btn" class="text-white p-2 focus:outline-none">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu-closed fixed inset-0 z-40 bg-night/95 backdrop-blur-xl flex flex-col justify-center items-center gap-8 md:hidden transition-all duration-500 ease-out">
+        <a href="#hero" class="mobile-link text-3xl font-display font-bold text-white uppercase tracking-widest hover:text-neon transition-colors">Accueil</a>
+        <a href="#features" class="mobile-link text-3xl font-display font-bold text-white uppercase tracking-widest hover:text-neon transition-colors">L'Espace</a>
+        <a href="#gallery" class="mobile-link text-3xl font-display font-bold text-white uppercase tracking-widest hover:text-neon transition-colors">Galerie</a>
+        <a href="#contact" class="mobile-link text-xl bg-white text-night px-8 py-3 rounded-full font-bold uppercase tracking-widest hover:bg-neon hover:text-white transition-all">Réserver</a>
+        
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <nav class="hidden md:flex fixed top-6 left-0 right-0 justify-center z-50">
+        <div class="glass-panel rounded-full px-8 py-4 flex items-center gap-12">
+            <a href="#hero" class="text-sm font-bold uppercase tracking-widest hover:text-neon transition-colors">Accueil</a>
+            <a href="#features" class="text-sm font-bold uppercase tracking-widest hover:text-neon transition-colors">L'Espace</a>
+            <span class="font-display font-extrabold text-2xl tracking-tighter mx-4">L'ATELIER.</span>
+            <a href="#gallery" class="text-sm font-bold uppercase tracking-widest hover:text-neon transition-colors">Galerie</a>
+            <a href="#contact" class="bg-white text-night px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-neon hover:text-white transition-all">Réserver</a>
         </div>
-      </div>
+    </nav>
+
+    <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1613575831056-0acd5da8f085?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover opacity-90" alt="Appartement Moderne">
+            <div class="absolute inset-0 bg-gradient-to-b from-night via-night/30 to-night"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <div class="inline-block px-4 py-1 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-xs uppercase tracking-[0.2em] mb-6 animate-float">
+                Liège Centre • Belgique
+            </div>
+            
+            <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-tight md:leading-none tracking-tight mb-8">
+                <span class="block text-gradient">L'ATELIER</span>
+                <span class="block text-white opacity-90">URBAIN</span>
+            </h1>
+
+            <p class="max-w-xl mx-auto text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-12 drop-shadow-md">
+                Un appartement suspendu dans le temps. Design contemporain, vues panoramiques et calme absolu au cœur de l'effervescence.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#features" class="group relative px-8 py-4 bg-white text-night rounded-full font-bold uppercase text-sm tracking-widest overflow-hidden transition-all hover:scale-105">
+                    <span class="relative z-10">Explorer</span>
+                    <div class="absolute inset-0 bg-neon transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80">
+            <span class="text-[10px] uppercase tracking-widest text-white">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
     </header>
 
-    <main>
-      <!-- Carousel -->
-      <section id="collection" class="section collection">
-        <h2>Notre collection</h2>
-
-        <div class="carousel">
-          <button class="carousel-btn prev" aria-label="Précédent">
-            &#10094;
-          </button>
-          <div class="carousel-viewport">
-            <div class="carousel-track">
-              <div class="carousel-slide">
-                <img
-                  src="images/1024/look1-1024.jpg"
-                  srcset="
-                    images/480/look1-480.jpg    480w,
-                    images/800/look1-800.jpg    800w,
-                    images/1024/look1-1024.jpg 1024w
-                  "
-                  sizes="100vw"
-                  alt="Tenue élégante femme"
-                  loading="lazy"
-                  decoding="async"
-                  width="1024"
-                  height="1536"
-                />
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="images/1024/look2-1024.jpg"
-                  srcset="
-                    images/480/look2-480.jpg    480w,
-                    images/800/look2-800.jpg    800w,
-                    images/1024/look2-1024.jpg 1024w
-                  "
-                  sizes="100vw"
-                  alt="Tenue décontractée homme"
-                  loading="lazy"
-                  decoding="async"
-                  width="1024"
-                  height="1536"
-                />
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="images/1024/look3-1024.jpg"
-                  srcset="
-                    images/480/look3-480.jpg    480w,
-                    images/800/look3-800.jpg    800w,
-                    images/1024/look3-1024.jpg 1024w
-                  "
-                  sizes="100vw"
-                  alt="Veste moderne"
-                  loading="lazy"
-                  decoding="async"
-                  width="1024"
-                  height="1536"
-                />
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="images/1024/look4-1024.jpg"
-                  srcset="
-                    images/480/look4-480.jpg    480w,
-                    images/800/look4-800.jpg    800w,
-                    images/1024/look4-1024.jpg 1024w
-                  "
-                  sizes="100vw"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Ensemble estival pour femme"
-                  width="1024"
-                  height="1536"
-                />
-              </div>
+    <section id="features" class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <h2 class="font-display font-bold text-5xl md:text-7xl text-white max-w-2xl">
+                    L'ART DE <br><span class="text-gray-600">VIVRE.</span>
+                </h2>
+                <p class="text-gray-400 max-w-sm text-right md:text-right">
+                    Conçu pour les créatifs, les nomades et ceux qui cherchent l'inspiration.
+                </p>
             </div>
-          </div>
-          <button class="carousel-btn next" aria-label="Suivant">
-            &#10095;
-          </button>
-        </div>
-      </section>
 
-      <!-- Visit / Map -->
-      <section id="contact" class="section map-section">
-        <h2>Où nous trouver</h2>
-        <p>Venez découvrir nos collections directement à la boutique.</p>
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
-            allowfullscreen=""
-            loading="lazy"
-            decoding="async"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation de Nova Boutique à Liège"
-          ></iframe>
-        </div>
-      </section>
-    </main>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-8 rounded-3xl pointer:hover:bg-white/5 transition-colors duration-500 group">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-8 text-neon group-hover:scale-110 transition-transform">
+                        <i data-lucide="wifi" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-white">Hyper-Connecté</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Fibre 1GBps dédiée. Un bureau ergonomique avec vue sur la ville pour travailler sans limite.
+                    </p>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-contact">
-          <a
-            href="https://maps.google.com/?q=Parc de la Boverie 3, 4020 Liège"
-            target="_blank"
-            rel="noopener noreferrer"
-            >📍 Parc de la Boverie 3, 4020 Liège</a
-          >
-          <a href="tel:+32123456789">📞 +32 123 45 67 89</a>
-          <a href="mailto:contact@novaboutique.be"
-            >✉️ contact@novaboutique.be</a
-          >
+                <div class="glass-panel p-8 rounded-3xl pointer:hover:bg-white/5 transition-colors duration-500 group md:mt-12">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-8 text-neon group-hover:scale-110 transition-transform">
+                        <i data-lucide="moon" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-white">Nuits Paisibles</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Isolation acoustique studio. Literie King Size premium et rideaux occultants totaux.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl pointer:hover:bg-white/5 transition-colors duration-500 group md:mt-24">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-8 text-neon group-hover:scale-110 transition-transform">
+                        <i data-lucide="coffee" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-white">Full Équipé</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Machine espresso à grains, cuisine complète et tout le nécessaire pour vivre comme un local.
+                    </p>
+                </div>
+            </div>
         </div>
-        <p class="footer-copy">© 2025 Nova Boutique — Tous droits réservés</p>
-      </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-night">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-none md:grid-rows-2 gap-4 h-auto md:h-[800px]">
+                
+                <div class="h-80 md:h-full md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1737467023078-a694673d7cb3?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chambre" class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105">
+                    <div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/90 to-transparent">
+                        <span class="text-white font-display text-3xl font-bold">La Chambre</span>
+                    </div>
+                </div>
+
+                <div class="h-80 md:h-full md:col-span-2 rounded-3xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cuisine Moderne" class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105">
+                    <div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 to-transparent">
+                        <span class="text-white font-display text-2xl font-bold">La Cuisine</span>
+                    </div>
+                </div>
+
+                <div class="h-80 md:h-full md:col-span-2 rounded-3xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop" alt="Détail Living" class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105">
+                    <div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black/90 to-transparent">
+                        <span class="text-white font-display text-2xl font-bold">Le Living</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 sm:py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="glass-panel rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-neon rounded-full blur-[120px] opacity-40"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+                    <div>
+                        <h2 class="font-display font-bold text-4xl md:text-6xl text-white mb-8">
+                            RÉSERVER VOTRE <br><span class="text-gradient">SÉJOUR.</span>
+                        </h2>
+                        
+                        <div class="space-y-8 mt-12">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="map-pin" class="text-white w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-2">Localisation</h4>
+                                    <p class="text-gray-400 font-light">Parc de la Boverie 3,<br>4020 Liège, Belgique</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="phone" class="text-white w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-2">Téléphone</h4>
+                                    <p class="text-gray-400 font-light">+32 123 45 67 89</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="text-white w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold uppercase tracking-wider mb-2">Email</h4>
+                                    <p class="text-gray-400 font-light">hello@atelier-urbain.be</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-80 lg:h-auto rounded-3xl overflow-hidden shadow-2xl">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe" 
+                            class="w-full h-full border-0" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-white font-display font-bold text-xl tracking-tighter">
+                L'ATELIER.
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-gray-500 text-xs font-mono">
+                <span>© 2025 L'Atelier Urbain.</span>
+                <span class="hidden md:block opacity-30">|</span>
+                <a href="/cookies.html" class="hover:text-white transition-colors duration-300">Politique de Cookies</a>
+            </div>
+
+            <div class="flex gap-6">
+                <i data-lucide="instagram" class="w-5 h-5 text-gray-500 hover:text-white cursor-pointer transition-colors"></i>
+                <i data-lucide="twitter" class="w-5 h-5 text-gray-500 hover:text-white cursor-pointer transition-colors"></i>
+            </div>
+        </div>
     </footer>
 
-    <div
-    style="background-color: #000000; color: #888888; text-align: center; padding: 15px; font-size: 0.8rem; border-top: 1px solid #222; font-family: sans-serif;">
-    <a href="/cookies.html" style="color: #cccccc; text-decoration: none;">Politique de Cookies</a>
-  </div>
-
     <script>
-      const slides = document.querySelectorAll(".carousel-slide");
-      const prevBtn = document.querySelector(".carousel-btn.prev");
-      const nextBtn = document.querySelector(".carousel-btn.next");
-      const viewport = document.querySelector(".carousel-viewport");
-      let current = 0;
+        lucide.createIcons();
 
-      const setViewportHeight = () => {
-        const active = slides[current];
-        if (!active) return;
-        const img = active.querySelector("img");
-        if (!img) return;
-        const h = img.getBoundingClientRect().height;
-        if (h > 0) viewport.style.height = h + "px";
-      };
+        // Mobile Menu Logic with Animation
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-      const updateSlides = () => {
-        slides.forEach((slide, i) => {
-          slide.classList.remove("active");
-          if (i === current) {
-            slide.classList.add("active");
-            slide.style.transform = `translateY(-${i * 100}%)`;
-          } else if (i === (current - 1 + slides.length) % slides.length) {
-            slide.style.transform = `translate(-100%,-${i * 100}%)`;
-          } else if (i === (current + 1) % slides.length) {
-            slide.style.transform = `translate(100%,-${i * 100}%)`;
-          } else {
-            slide.style.transform = `translateY(-${i * 100}%)`;
-          }
-        });
-        setViewportHeight();
-      };
-
-      prevBtn.addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        updateSlides();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        updateSlides();
-      });
-
-      // Wait for images to load before setting height
-      window.addEventListener("load", setViewportHeight);
-      window.addEventListener("resize", setViewportHeight);
-      window.addEventListener("orientationchange", setViewportHeight);
-      slides.forEach((s) => {
-        const img = s.querySelector("img");
-        if (img) {
-          if (img.complete) {
-            img.decode?.().then(setViewportHeight).catch(setViewportHeight);
-          } else {
-            img.addEventListener("load", setViewportHeight, { once: true });
-          }
+        function toggleMenu() {
+            // Check if currently closed
+            const isClosed = mobileMenu.classList.contains('mobile-menu-closed');
+            
+            if (isClosed) {
+                // Open it
+                mobileMenu.classList.remove('mobile-menu-closed');
+                mobileMenu.classList.add('mobile-menu-open');
+                document.body.style.overflow = 'hidden'; // Lock scroll
+            } else {
+                // Close it
+                mobileMenu.classList.remove('mobile-menu-open');
+                mobileMenu.classList.add('mobile-menu-closed');
+                document.body.style.overflow = ''; // Unlock scroll
+            }
         }
-      });
 
-      updateSlides();
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
     </script>
-  </body>
+</body>
 </html>

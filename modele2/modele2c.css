@@ -193,6 +193,7 @@ img {
 /* --- HERO SECTION (Diagonal) --- */
 .hero {
     position: relative;
+    z-index: 0;
     height: 90vh;
     display: flex;
     align-items: center;
@@ -574,5 +575,48 @@ img {
     .service-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* --- LEGAL / COOKIES SECTION --- */
+
+/* Override existing copyright opacity to allow hover effects */
+.copyright {
+    opacity: 1; /* Reset global opacity */
+    color: rgba(255, 255, 255, 0.6); /* Apply transparency to text only */
+}
+
+.legal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.legal-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects (Desktop) */
+@media (hover: hover) {
+    .legal-link:hover {
+        color: var(--primary); /* Electric Blue glow */
+        text-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+        text-decoration: none;
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .legal-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .legal-separator {
+        display: none;
     }
 }

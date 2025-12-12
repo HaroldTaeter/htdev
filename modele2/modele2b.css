@@ -503,3 +503,42 @@ img { max-width: 100%; display: block; }
         color: var(--white); 
     }
 }
+
+/* --- LEGAL / COOKIES SECTION --- */
+.legal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.legal-separator {
+    color: #888;
+    opacity: 0.5;
+}
+
+.legal-link {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for desktop */
+@media (hover: hover) {
+    .legal-link:hover {
+        color: var(--white); /* Brightens to white on hover */
+        text-decoration: underline;
+    }
+}
+
+/* Mobile Responsiveness: Stack vertically */
+@media screen and (max-width: 768px) {
+    .legal-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .legal-separator {
+        display: none; /* Hide separator on mobile */
+    }
+}

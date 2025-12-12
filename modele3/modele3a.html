@@ -1,180 +1,342 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <script src="/cookie-consent.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modèle 3A</title>
-    <link
-      rel="preload"
-      as="image"
-      href="images/1536/interieur-1536.jpg"
-      imagessrcset="
-        images/480/interieur-480.jpg    480w,
-        images/800/interieur-800.jpg    800w,
-        images/1024/interieur-1024.jpg 1024w,
-        images/1536/interieur-1536.jpg 1536w
-      "
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
-    <link rel="stylesheet" href="modele3a.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <header class="navbar">
-      <h1 class="logo">Bella Vita</h1>
-      <nav>
-        <ul>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#galerie">Galerie</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<html lang="fr" class="scroll-smooth scroll-pt-12">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Écho des Saveurs - Restaurant Liège</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        foret: '#22382F', // Deep Forest Green
+                        or: '#D4AF37',    // Muted Gold
+                        creme: '#F9F7F2', // Organic Cream
+                        sable: '#EBE5D5', // Darker Sand
+                        sombre: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    screens: {
+                        'souris': {'raw': '(hover: hover)'}, // Custom screen for pointer devices only
+                    },
+                    backgroundImage: {
+                        'texture-papier': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    },
+                    dropShadow: {
+                        'text-strong': '0 4px 3px rgba(0, 0, 0, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for Organic Feel */
+        .blob-forme-1 {
+            border-radius: 64% 36% 28% 72% / 68% 34% 66% 32%;
+        }
+        .blob-forme-2 {
+            border-radius: 35% 65% 69% 31% / 37% 33% 67% 63%;
+        }
+        .blob-forme-3 {
+            border-radius: 73% 27% 37% 63% / 54% 34% 66% 46%;
+        }
+        
+        /* Smooth parallax effect */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F7F2; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22382F; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-creme text-sombre font-sans antialiased overflow-x-hidden selection:bg-foret selection:text-or">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-creme shadow-sm border-b border-foret/10 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+            <a href="#" class="font-serif text-2xl md:text-3xl text-foret font-bold tracking-tighter relative z-50">
+                L'Écho<span class="text-or">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#philosophie" class="text-foret text-sm uppercase tracking-widest font-bold transition-colors souris:hover:text-or">Philosophie</a>
+                <a href="#saveurs" class="text-foret text-sm uppercase tracking-widest font-bold transition-colors souris:hover:text-or">Le Menu</a>
+                <a href="#contact" class="px-6 py-2 bg-foret text-creme font-serif italic text-lg rounded-full transition-transform transform souris:hover:scale-105 shadow-lg border border-transparent souris:hover:border-or">
+                    Réserver
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-foret p-2 relative z-50 hover:text-or transition-colors">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+
+            <div id="mobile-menu-dropdown" class="absolute top-full left-0 w-full bg-creme shadow-2xl border-t border-foret/10 flex flex-col items-center py-8 space-y-6 md:hidden origin-top transform scale-y-0 opacity-0 pointer-events-none transition-all duration-300 ease-in-out">
+                <a href="#philosophie" class="mobile-link font-serif text-2xl text-foret hover:text-or transition-colors font-bold">Philosophie</a>
+                <a href="#saveurs" class="mobile-link font-serif text-2xl text-foret hover:text-or transition-colors font-bold">Le Menu</a>
+                <a href="#contact" class="mobile-link font-serif text-2xl text-foret hover:text-or transition-colors font-bold">Réserver</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="accueil" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=1189&auto=format&fit=crop" alt="Ambiance Restaurant" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-foret/30 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-foret/60 via-transparent to-transparent opacity-100"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <span class="block text-or font-serif font-bold italic text-xl md:text-3xl mb-4 animate-fade-in-up drop-shadow-lg">Bienvenue au Parc de la Boverie</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-creme font-bold mb-8 leading-tight drop-shadow-xl">
+                L'Écho des Saveurs
+            </h1>
+            
+            <p class="text-creme text-lg md:text-2xl font-bold max-w-2xl mx-auto mb-10 drop-shadow-text-strong leading-relaxed tracking-wide">
+                Une cuisine organique où chaque ingrédient raconte l'histoire de notre terroir.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#saveurs" class="px-8 py-3 bg-or text-foret font-bold uppercase tracking-widest rounded-full shadow-xl transition-all souris:hover:bg-creme souris:hover:text-foret transform souris:hover:-translate-y-1 border border-transparent souris:hover:border-or">
+                    Découvrir la Carte
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 rotate-180">
+            <svg class="relative block w-[calc(140%+1.3px)] h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-creme"></path>
+            </svg>
+        </div>
     </header>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <img
-          src="images/1536/interieur-1536.jpg"
-          srcset="
-            images/480/interieur-480.jpg    480w,
-            images/800/interieur-800.jpg    800w,
-            images/1024/interieur-1024.jpg 1024w,
-            images/1536/interieur-1536.jpg 1536w
-          "
-          sizes="100vw"
-          alt="Intérieur chaleureux de la pizzeria Bella Vita"
-          class="hero-img"
-          fetchpriority="high"
-          width="1536"
-          height="1024"
-        />
+    <section id="philosophie" class="py-24 bg-creme relative overflow-hidden">
+        <div class="absolute top-20 left-0 w-64 h-64 bg-sable/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-20 right-0 w-96 h-96 bg-or/10 rounded-full blur-3xl -z-10"></div>
 
-        <div class="hero-content">
-          <h2>Pizzeria Bella Vita</h2>
-          <p>Saveurs italiennes authentiques, préparées avec passion.</p>
-          <p class="cta">
-            Réserver au
-            <a href="tel:+32123456789" class="phone-link">+32 123 45 67 89</a>
-          </p>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="relative w-full aspect-square max-w-md mx-auto">
+                        <div class="absolute inset-0 border-2 border-or blob-forme-1 transform translate-x-4 translate-y-4"></div>
+                        <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?q=80&w=880&auto=format&fit=crop" alt="Chef cuisinant" class="w-full h-full object-cover blob-forme-1 shadow-2xl relative z-10">
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h2 class="font-serif text-4xl md:text-5xl text-foret font-bold mb-6">
+                        L'Organique <span class="italic text-or">Raffiné</span>
+                    </h2>
+                    <p class="text-foret/80 text-lg mb-6 leading-relaxed">
+                        Situé au cœur vibrant de Liège, L'Écho des Saveurs n'est pas simplement un restaurant, c'est une respiration. Nous puisons notre inspiration dans les courbes naturelles du Parc de la Boverie.
+                    </p>
+                    <p class="text-foret/80 text-lg mb-8 leading-relaxed">
+                        Notre chef sélectionne des produits locaux, bruts et de saison pour composer des assiettes qui célèbrent la simplicité sophistiquée. Pas d'artifices, juste le goût pur.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-8 border-t border-foret/10 pt-8">
+                        <div>
+                            <i data-lucide="leaf" class="w-8 h-8 text-or mb-2 mx-auto lg:mx-0"></i>
+                            <h4 class="font-bold text-foret uppercase tracking-wider text-sm">Produits Locaux</h4>
+                        </div>
+                        <div>
+                            <i data-lucide="wine" class="w-8 h-8 text-or mb-2 mx-auto lg:mx-0"></i>
+                            <h4 class="font-bold text-foret uppercase tracking-wider text-sm">Vins Naturels</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Menu Section -->
-      <section id="menu" class="menu">
-        <h2>Notre Menu</h2>
-        <p>Découvrez toutes nos pizzas, pâtes et desserts maison.</p>
-        <a
-          href="menu.pdf"
-          class="menu-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Voir le menu (PDF)</a
-        >
-      </section>
-
-      <!-- Gallery Section -->
-      <section id="galerie" class="galerie">
-        <h2>Galerie</h2>
-        <div class="gallery-grid">
-          <img
-            src="images/1536/pizza1-1536.jpg"
-            srcset="
-              images/480/pizza1-480.jpg    480w,
-              images/800/pizza1-800.jpg    800w,
-              images/1024/pizza1-1024.jpg 1024w,
-              images/1536/pizza1-1536.jpg 1536w
-            "
-            sizes="(min-width: 768px) 45vw, 100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Pizza Margherita"
-            width="1536"
-            height="1024"
-          />
-          <img
-            src="images/1536/four-1536.jpg"
-            srcset="
-              images/480/four-480.jpg    480w,
-              images/800/four-800.jpg    800w,
-              images/1024/four-1024.jpg 1024w,
-              images/1536/four-1536.jpg 1536w
-            "
-            sizes="(min-width: 768px) 45vw, 100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Cuisson au feu de bois"
-            width="1536"
-            height="1024"
-          />
-          <img
-            src="images/1536/pizza2-1536.jpg"
-            srcset="
-              images/480/pizza2-480.jpg    480w,
-              images/800/pizza2-800.jpg    800w,
-              images/1024/pizza2-1024.jpg 1024w,
-              images/1536/pizza2-1536.jpg 1536w
-            "
-            sizes="(min-width: 768px) 45vw, 100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Pizza 4 fromages"
-            width="1536"
-            height="1024"
-          />
-          <img
-            src="images/1536/preparation-1536.jpg"
-            srcset="
-              images/480/preparation-480.jpg    480w,
-              images/800/preparation-800.jpg    800w,
-              images/1024/preparation-1024.jpg 1024w,
-              images/1536/preparation-1536.jpg 1536w
-            "
-            sizes="(min-width: 768px) 45vw, 100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Preparation de pizzas"
-            width="1536"
-            height="1024"
-          />
+    <div class="w-full h-96 parallax-bg flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-foret/60"></div>
+        <div class="relative z-10 text-center px-6">
+            <i data-lucide="quote" class="w-12 h-12 text-or mx-auto mb-6 opacity-80"></i>
+            <p class="font-serif text-2xl md:text-4xl text-creme italic max-w-3xl leading-normal">
+                "La cuisine est l'art de transformer l'instant en souvenir éternel."
+            </p>
         </div>
-      </section>
+    </div>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <p><strong>Adresse :</strong> Parc de la Boverie 3, 4020 Liège</p>
-          <p>
-            <strong>Téléphone :</strong
-            ><a href="tel:+32123456789" class="phone-link"> +32 123 45 67 89</a>
-          </p>
-          <p><strong>Horaires :</strong> Mar - Dim : 11h30 – 22h00</p>
-        </div>
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
-            width="600"
-            height="450"
-            allowfullscreen=""
-            loading="lazy"
-            decoding="async"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation de Pizza Bella Vita à Liège"
-          ></iframe>
-        </div>
-      </section>
-    </main>
+    <section id="saveurs" class="py-24 bg-sable/30 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-or font-serif italic text-xl">De Saison</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-foret font-bold mt-2">Nos Créations Signature</h2>
+            </div>
 
-    <footer>
-      <p>© 2025 Pizzeria Bella Vita – Tous droits réservés</p>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="group relative">
+                    <div class="h-80 w-full overflow-hidden rounded-[2rem] shadow-lg relative">
+                        <div class="absolute inset-0 bg-foret/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1625862220431-f8d70c6addda?q=80&w=1170&auto=format&fit=crop" alt="Canard et feuilleté" class="w-full h-full object-cover transform transition-transform duration-700 souris:group-hover:scale-110">
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h3 class="font-serif text-2xl text-foret font-bold">Canard & Feuilleté</h3>
+                        <p class="text-sm text-foret/60 mt-2 mb-3 px-4">Magret de canard, feuilleté de pomme de terre croustillant, légumes de saison.</p>
+                        <span class="text-or font-bold text-lg">22€</span>
+                    </div>
+                </div>
+
+                <div class="group relative mt-12 md:mt-0">
+                    <div class="h-80 w-full overflow-hidden rounded-[2rem] shadow-lg relative">
+                        <div class="absolute inset-0 bg-foret/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plat" class="w-full h-full object-cover transform transition-transform duration-700 souris:group-hover:scale-110">
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h3 class="font-serif text-2xl text-foret font-bold">Filet de Cerf</h3>
+                        <p class="text-sm text-foret/60 mt-2 mb-3 px-4">Réduction aux airelles, purée de panais, légumes racines glacés.</p>
+                        <span class="text-or font-bold text-lg">34€</span>
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <div class="h-80 w-full overflow-hidden rounded-[2rem] shadow-lg relative">
+                        <div class="absolute inset-0 bg-foret/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dessert" class="w-full h-full object-cover transform transition-transform duration-700 souris:group-hover:scale-110">
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h3 class="font-serif text-2xl text-foret font-bold">Douceur Citron</h3>
+                        <p class="text-sm text-foret/60 mt-2 mb-3 px-4">Meringue italienne légère, sablé breton, zestes de combava.</p>
+                        <span class="text-or font-bold text-lg">14€</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="./menu.pdf" target="_blank" class="inline-flex items-center text-foret border-b-2 border-or pb-1 uppercase tracking-widest font-bold text-sm souris:hover:text-or transition-colors">
+                    Voir le Menu Complet <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative h-24 bg-sable/30">
+        <svg class="absolute top-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 54">
+            <path fill="#22382F" d="M0 22L120 16.7C240 11.3 480 0.7 720 0.7C960 0.7 1200 11.3 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"></path>
+        </svg>
+    </div>
+
+    <footer id="contact" class="bg-foret text-creme pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 items-stretch">
+                
+                <div class="lg:w-1/3 space-y-8 flex flex-col justify-center">
+                    <div>
+                        <h3 class="font-serif text-3xl mb-6 text-or">Nous Trouver</h3>
+                        <p class="flex items-start gap-4 mb-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-or flex-shrink-0 mt-1"></i>
+                            <span class="text-lg opacity-90">Parc de la Boverie 3,<br>4020 Liège, Belgique</span>
+                        </p>
+                        <p class="flex items-center gap-4 mb-4">
+                            <i data-lucide="phone" class="w-6 h-6 text-or flex-shrink-0"></i>
+                            <span class="text-lg opacity-90">+32 123 45 67 89</span>
+                        </p>
+                        <p class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-or flex-shrink-0"></i>
+                            <span class="text-lg opacity-90">bonjour@echodessaveurs.be</span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-serif text-xl mb-4 text-or">Horaires</h4>
+                        <ul class="space-y-2 text-sm opacity-80 font-mono">
+                            <li class="flex justify-between border-b border-creme/10 pb-2">
+                                <span>Mercredi - Vendredi</span>
+                                <span>18:00 - 22:30</span>
+                            </li>
+                            <li class="flex justify-between border-b border-creme/10 pb-2">
+                                <span>Samedi</span>
+                                <span>12:00 - 14:30 | 18:00 - 23:00</span>
+                            </li>
+                            <li class="flex justify-between border-b border-creme/10 pb-2">
+                                <span>Dimanche</span>
+                                <span>12:00 - 15:30</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/3 relative h-96 lg:h-auto">
+                    <div class="w-full h-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-creme/10 lg:absolute lg:inset-0">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            scrolling="no" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            class="block w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-creme/10 flex flex-col md:flex-row justify-between items-center text-sm opacity-60">
+                <p>© 2025 L'Écho des Saveurs. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="souris:hover:text-or transition-colors">Instagram</a>
+                    <a href="#" class="souris:hover:text-or transition-colors">Facebook</a>
+                    <a href="/cookies.html" class="souris:hover:text-or transition-colors">Politique de Cookies</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <div
-    style="background-color: #000000; color: #888888; text-align: center; padding: 15px; font-size: 0.8rem; border-top: 1px solid #222; font-family: sans-serif;">
-    <a href="/cookies.html" style="color: #cccccc; text-decoration: none;">Politique de Cookies</a>
-  </div>
-  </body>
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuDropdown = document.getElementById('mobile-menu-dropdown');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                // Open: Scale up, Opacity 1, Pointer Events auto
+                menuDropdown.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
+            } else {
+                // Close: Scale down, Opacity 0, Pointer Events none
+                menuDropdown.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
 </html>

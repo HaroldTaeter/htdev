@@ -398,3 +398,42 @@ img {
         transform: translateY(-5px);
     }
 }
+
+/* --- LEGAL / COOKIES SECTION --- */
+.legal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.legal-divider {
+    display: block;
+    color: var(--primary);
+}
+
+.legal-link {
+    transition: color 0.3s;
+    text-decoration: none;
+    color: inherit; /* Inherits gray from .copyright */
+}
+
+/* Only show hover effects on devices that support hovering */
+@media (hover: hover) {
+    .legal-link:hover {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}
+
+/* Mobile: Stack items and hide separator */
+@media screen and (max-width: 768px) {
+    .legal-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .legal-divider {
+        display: none;
+    }
+}

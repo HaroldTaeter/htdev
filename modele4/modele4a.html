@@ -1,189 +1,378 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <script src="/cookie-consent.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nova Boutique — vêtements contemporains et intemporels pour femmes et hommes. Découvrez notre collection de pièces élégantes et durables."
-    />
-    <title>Modèle 4A</title>
-    <link
-      rel="preload"
-      as="image"
-      href="images/1536/nova-1536.jpg"
-      imagessrcset="
-        images/480/nova-480.jpg    480w,
-        images/800/nova-800.jpg    800w,
-        images/1024/nova-1024.jpg 1024w,
-        images/1536/nova-1536.jpg 1536w
-      "
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
-    <link rel="stylesheet" href="modele4a.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar" aria-label="Navigation principale">
-        <h1 class="logo">Nova Boutique</h1>
-        <ul class="nav-links">
-          <li><a href="#about" aria-current="page">À propos</a></li>
-          <li><a href="#collection">Collection</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hero">
-        <img
-          src="images/1536/nova-1536.jpg"
-          srcset="
-            images/480/nova-480.jpg    480w,
-            images/800/nova-800.jpg    800w,
-            images/1024/nova-1024.jpg 1024w,
-            images/1536/nova-1536.jpg 1536w
-          "
-          sizes="100vw"
-          alt="Intérieur de la boutique Nova"
-          class="hero-img"
-          fetchpriority="high"
-          width="1536"
-          height="1024"
-        />
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Refuge Sauvage | Cabane & Forêt</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <div class="hero-content">
-          <h2>Vêtements contemporains & intemporels</h2>
-          <p>
-            Des pièces soigneusement choisies pour refléter votre style, saison
-            après saison.
-          </p>
-          <a href="#collection" class="btn">Découvrir la collection</a>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earth: '#2C2520',   /* Dark Brown/Black */
+                        clay: '#D6A87C',    /* Lighter Terracotta */
+                        leaf: '#4A5D44',    /* Desaturated Green */
+                        paper: '#F2F0E9',   /* Off-white background */
+                        stone: '#E5E2D9',   /* Slightly darker beige */
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    screens: {
+                        'pointer': {'raw': '(hover: hover)'},
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for gallery */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth text reveal animation */
+        .reveal-text {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HARD SHADOW UTILITY */
+        .hard-shadow {
+            box-shadow: 16px 16px 0px 0px #2C2520; /* Solid Earth color shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        @media (hover: hover) {
+            .hard-shadow:hover {
+                transform: translate(-4px, -4px);
+                box-shadow: 20px 20px 0px 0px #D6A87C; /* Clay color on hover */
+            }
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .menu-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .menu-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-paper text-earth font-sans antialiased selection:bg-leaf selection:text-white">
+
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-earth/95 backdrop-blur-md flex flex-col justify-center items-center gap-8 menu-hidden">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white hover:text-clay transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        
+        <a href="#concept" class="mobile-link text-3xl font-serif text-white hover:text-clay italic">Le Lieu</a>
+        <a href="#gallery" class="mobile-link text-3xl font-serif text-white hover:text-clay italic">Galerie</a>
+        <a href="#contact" class="mobile-link text-3xl font-serif text-white hover:text-clay italic">Contact</a>
+        <a href="#contact" class="mobile-link mt-4 px-8 py-3 bg-white text-earth font-bold uppercase tracking-widest text-sm hover:bg-clay hover:text-white transition-colors">Réserver</a>
+    </div>
+
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center transition-all duration-500 bg-gradient-to-b from-earth/90 to-transparent">
+        <div class="text-white font-serif font-bold text-2xl tracking-wider drop-shadow-md relative z-50">
+            Le Refuge.
         </div>
-      </div>
+        
+        <div class="hidden md:flex gap-8 text-white text-sm font-medium tracking-widest uppercase drop-shadow-sm">
+            <a href="#concept" class="hover:text-clay transition-colors">Le Lieu</a>
+            <a href="#gallery" class="hover:text-clay transition-colors">Galerie</a>
+            <a href="#contact" class="hover:text-clay transition-colors">Contact</a>
+        </div>
+
+        <a href="#contact" class="hidden md:block bg-white text-earth px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-clay hover:text-white transition-colors shadow-lg">
+            Réserver
+        </a>
+
+        <button id="open-menu-btn" class="md:hidden text-white drop-shadow-md relative z-50">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </nav>
+
+    <header class="relative w-full h-screen overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+             alt="Cabane dans la forêt" 
+             class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-20 reveal-text">
+            <div class="max-w-3xl">
+                <p class="text-clay font-bold tracking-[0.2em] uppercase text-lg mb-4 drop-shadow-md">Ardennes Belges</p>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-6 drop-shadow-xl">
+                    LE REFUGE <br><i class="font-light">SAUVAGE</i>
+                </h1>
+                <p class="text-white text-lg md:text-xl font-medium max-w-lg leading-relaxed border-l-2 border-clay pl-6 drop-shadow-lg">
+                    Une architecture invisible. Un silence absolu. 
+                    Redécouvrez le temps long dans notre cabane éco-responsable.
+                </p>
+            </div>
+        </div>
     </header>
 
-    <main>
-      <section id="about" class="section about">
-        <h2>À propos</h2>
-        <p>
-          Chez Nova Boutique, nous croyons en une mode simple, élégante et
-          durable. Chaque vêtement est sélectionné pour sa qualité, son confort
-          et son intemporalité. Nous travaillons avec des créateurs locaux et
-          des marques européennes pour proposer des collections à la fois
-          modernes et responsables.
-        </p>
-      </section>
+    <section id="concept" class="py-24 md:py-32 bg-paper relative z-10">
+        <div class="max-w-7xl mx-auto px-6 space-y-24">
+            
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+                <div class="w-full md:w-1/2 space-y-6">
+                    <span class="text-clay font-bold uppercase tracking-widest text-xs">01. La cabane</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-earth">Un foyer au cœur des bois</h2>
+                    <p class="text-gray-600 leading-loose">
+                        Le poêle à bois crépite. Le fauteuil en cuir patiné vous attend. À travers la baie vitrée de quatre mètres, la nature offre son spectacle quotidien, sans filtre. Ici, le luxe c'est l'espace et la lumière.
+                    </p>
+                    <ul class="space-y-2 text-sm text-leaf font-medium mt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Poêle Scandinave</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Bibliothèque</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Pas de WiFi</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 h-[500px] relative px-4 md:px-0">
+                    <img src="https://images.unsplash.com/photo-1631630259742-c0f0b17c6c10?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Intérieur cabane" 
+                         class="relative w-full h-full object-cover hard-shadow rounded-sm z-10">
+                </div>
+            </div>
 
-      <section id="collection" class="section collection">
-        <h2>Notre collection</h2>
-        <div class="gallery">
-          <img
-            src="images/1024/look1-1024.jpg"
-            srcset="
-              images/480/look1-480.jpg    480w,
-              images/800/look1-800.jpg    800w,
-              images/1024/look1-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Tenue élégante femme"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look2-1024.jpg"
-            srcset="
-              images/480/look2-480.jpg    480w,
-              images/800/look2-800.jpg    800w,
-              images/1024/look2-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Tenue décontractée homme"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look3-1024.jpg"
-            srcset="
-              images/480/look3-480.jpg    480w,
-              images/800/look3-800.jpg    800w,
-              images/1024/look3-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Veste moderne"
-            width="1024"
-            height="1536"
-          />
-          <img
-            src="images/1024/look4-1024.jpg"
-            srcset="
-              images/480/look4-480.jpg    480w,
-              images/800/look4-800.jpg    800w,
-              images/1024/look4-1024.jpg 1024w
-            "
-            sizes="
-              (max-width: 480px) 100vw,
-              (max-width: 768px) 100vw,
-              100vw"
-            loading="lazy"
-            decoding="async"
-            alt="Ensemble estival pour femme"
-            width="1024"
-            height="1536"
-          />
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-24">
+                <div class="w-full md:w-1/2 space-y-6">
+                    <span class="text-clay font-bold uppercase tracking-widest text-xs">02. L'Extérieur</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-earth">L'appel des grands espaces</h2>
+                    <p class="text-gray-600 leading-loose">
+                        Le refuge est votre camp de base pour explorer une nature indomptée. Des sentiers de randonnée partent directement du pied de la cabane. Découvrez les rivières sauvages, flânez au bord du lac et laissez-vous surprendre par des panoramas à couper le souffle.
+                    </p>
+                    <ul class="space-y-2 text-sm text-leaf font-medium mt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Randonnées balisées</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Lacs & Rivières</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Points de vue panoramiques</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 h-[500px] relative px-4 md:px-0">
+                    <img src="https://images.unsplash.com/photo-1668900016730-75a72135f96d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Rivière et forêt" 
+                         class="relative w-full h-full object-cover hard-shadow rounded-sm z-10">
+                </div>
+            </div>
+
         </div>
-      </section>
+    </section>
 
-      <section id="contact" class="section contact">
-        <h2>Nous contacter</h2>
-        <p>Venez nous rendre visite ou écrivez-nous pour toute demande.</p>
-        <address class="contact-list">
-          <a
-            href="https://maps.google.com/?q=Parc de la Boverie 3, 4020 Liège"
-            target="_blank"
-            rel="noopener noreferrer"
-            >📍 Parc de la Boverie 3, 4020 Liège</a
-          >
-          <a href="tel:+32123456789">📞 +32 123 45 67 89</a>
-          <a href="mailto:contact@novaboutique.be"
-            >✉️ contact@novaboutique.be</a
-          >
-        </address>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
-            allowfullscreen=""
-            loading="lazy"
-            decoding="async"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation de Nova Boutique à Liège"
-          ></iframe>
+    <section class="py-32 bg-leaf relative">
+        
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" 
+             style="background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');">
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>© 2025 Nova Boutique — Mode contemporaine</p>
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg class="block w-full h-[60px] md:h-[100px] text-paper fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 L1200,0 L1200,100 Z"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-12 md:p-16 shadow-2xl rounded-sm">
+                <i data-lucide="quote" class="w-12 h-12 text-paper mx-auto mb-6 opacity-80"></i>
+                <p class="font-serif text-2xl md:text-4xl text-white leading-normal italic mb-8">
+                    "Nous avons oublié quel jour nous étions. C'est exactement ce que nous cherchions. Une parenthèse enchantée."
+                </p>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-[1px] w-12 bg-white/50"></div>
+                    <span class="text-white font-sans text-xs font-bold tracking-[0.2em] uppercase">Marc & Julie, 2024</span>
+                    <div class="h-[1px] w-12 bg-white/50"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+            <svg class="block w-full h-[60px] md:h-[100px] text-stone fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,120 L1200,0 V120 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-stone overflow-hidden">
+        <div class="px-6 md:px-12 mb-12 flex justify-between items-end">
+            <div>
+                <span class="text-clay font-bold uppercase tracking-widest text-xs">Exploration</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-earth mt-2">Galerie</h2>
+            </div>
+            
+            <div class="flex gap-4">
+                <button onclick="scrollGallery('left')" class="p-3 border border-earth rounded-full hover:bg-earth hover:text-white transition-all">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                </button>
+                <button onclick="scrollGallery('right')" class="p-3 border border-earth rounded-full hover:bg-earth hover:text-white transition-all">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="gallery-container" class="flex gap-6 overflow-x-auto hide-scroll snap-x snap-mandatory px-6 md:px-12 pb-12">
+            
+            <div class="snap-center shrink-0 w-[85vw] md:w-[40vw] relative group cursor-pointer">
+                <div class="aspect-[3/2] overflow-hidden bg-earth shadow-lg rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1510023060291-d519947861b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105" 
+                         alt="Rivière">
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="font-serif text-2xl italic text-earth block">Rivière à proximité</span>
+                </div>
+            </div>
+
+            <div class="snap-center shrink-0 w-[85vw] md:w-[40vw] relative group cursor-pointer">
+                <div class="aspect-[3/2] overflow-hidden bg-earth shadow-lg rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1491982883790-ead7c97a047e?q=80&w=1094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105" 
+                         alt="Brouillard">
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="font-serif text-2xl italic text-earth block">Brouillard dans la forêt</span>
+                </div>
+            </div>
+
+            <div class="snap-center shrink-0 w-[85vw] md:w-[40vw] relative group cursor-pointer">
+                <div class="aspect-[3/2] overflow-hidden bg-earth shadow-lg rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1549778892-101c88c767c7?q=80&w=1220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105" 
+                         alt="Hiver">
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="font-serif text-2xl italic text-earth block">La cabane en hiver</span>
+                </div>
+            </div>
+
+            <div class="snap-center shrink-0 w-[85vw] md:w-[40vw] relative group cursor-pointer">
+                <div class="aspect-[3/2] overflow-hidden bg-earth shadow-lg rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1470748085385-5fbb3018c796?q=80&w=1124&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         class="w-full h-full object-cover transition-transform duration-700 pointer:hover:scale-105" 
+                         alt="Automne">
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="font-serif text-2xl italic text-earth block">La cabane en automne</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-earth text-stone">
+        
+        <div class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-8">
+                <h2 class="font-serif text-5xl md:text-6xl text-white leading-tight">
+                    Prêt pour <br><span class="italic text-clay">l'aventure ?</span>
+                </h2>
+                <p class="text-white/90 font-light text-lg max-w-md">
+                    Réservez votre séjour ou contactez-nous pour toute question spécifique. Nous répondons sous 24h.
+                </p>
+                <a href="mailto:bonjour@refugesauvage.be" class="inline-block border border-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-white hover:text-earth transition-all">
+                    Envoyer un email
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-white/20 pt-8 md:border-t-0 md:pt-0">
+                <div>
+                    <span class="block text-clay text-xs font-bold uppercase tracking-widest mb-4">Adresse</span>
+                    <p class="text-white font-serif text-xl leading-relaxed">
+                        Parc de la Boverie 3,<br>
+                        4020 Liège,<br>
+                        Belgique
+                    </p>
+                </div>
+                <div>
+                    <span class="block text-clay text-xs font-bold uppercase tracking-widest mb-4">Contact</span>
+                    <p class="text-white font-serif text-xl leading-relaxed">
+                        +32 123 45 67 89<br>
+                        bonjour@refugesauvage.be
+                    </p>
+                </div>
+                <div class="sm:col-span-2 mt-4">
+                    <span class="block text-clay text-xs font-bold uppercase tracking-widest mb-4">Suivez-nous</span>
+                    <div class="flex gap-6 text-white">
+                        <i data-lucide="instagram" class="w-6 h-6 hover:text-clay cursor-pointer transition-colors"></i>
+                        <i data-lucide="facebook" class="w-6 h-6 hover:text-clay cursor-pointer transition-colors"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="bg-[#1f1a16] py-6 border-t border-earth/50">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50 uppercase tracking-widest">
+                <span>© 2025 Le Refuge Sauvage. Tous droits réservés.</span>
+                <a href="/cookies.html" class="hover:text-white transition-colors">Politique de Cookies</a>
+            </div>
+        </div>
+
     </footer>
 
-    <div
-    style="background-color: #000000; color: #888888; text-align: center; padding: 15px; font-size: 0.8rem; border-top: 1px solid #222; font-family: sans-serif;">
-    <a href="/cookies.html" style="color: #cccccc; text-decoration: none;">Politique de Cookies</a>
-  </div>
-  </body>
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const openBtn = document.getElementById('open-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (menu.classList.contains('menu-hidden')) {
+                menu.classList.remove('menu-hidden');
+                menu.classList.add('menu-visible');
+                document.body.style.overflow = 'hidden'; // Disable scroll
+            } else {
+                menu.classList.remove('menu-visible');
+                menu.classList.add('menu-hidden');
+                document.body.style.overflow = ''; // Enable scroll
+            }
+        }
+
+        openBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        
+        // Close menu when link is clicked
+        links.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Gallery Slider Logic
+        function scrollGallery(direction) {
+            const container = document.getElementById('gallery-container');
+            const scrollAmount = window.innerWidth * 0.5;
+            
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
 </html>
