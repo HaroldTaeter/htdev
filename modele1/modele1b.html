@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <script src="/cookie-consent.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'ATELIER | Boulangerie Architecturale</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -50,18 +53,14 @@
             -webkit-text-stroke: 2px var(--color-primary);
             color: transparent;
         }
-        
+
         .text-outline-white {
-            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
             color: transparent;
         }
 
         .clip-diagonal-reverse {
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        }
-        
-        .clip-sharp-split {
-            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
         }
 
         .sharp-btn {
@@ -104,13 +103,14 @@
             .product-card:hover .product-img {
                 transform: scale(1.1);
             }
-            
+
             .product-card:hover {
                 border-color: var(--color-primary);
             }
         }
     </style>
 </head>
+
 <body class="font-mono antialiased selection:bg-primary selection:text-white bg-grain">
 
     <nav class="fixed w-full z-50 bg-white border-b border-gray-300 shadow-sm">
@@ -122,7 +122,7 @@
                     </div>
                     <span class="font-display text-2xl font-bold tracking-widest text-primary">L'ATELIER</span>
                 </div>
-                
+
                 <div class="hidden md:flex space-x-10 items-center">
                     <a href="#concept" class="nav-link text-sm font-bold">Concept</a>
                     <a href="#collection" class="nav-link text-sm font-bold">Collection</a>
@@ -135,7 +135,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-300 absolute w-full shadow-xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-300 shadow-xl">
             <div class="flex flex-col p-6 space-y-6 text-center font-display text-xl tracking-wider">
                 <a href="#concept" class="mobile-link py-2 border-b border-gray-100">CONCEPT</a>
                 <a href="#collection" class="mobile-link py-2 border-b border-gray-100">COLLECTION</a>
@@ -147,16 +147,18 @@
     <header id="hero" class="relative w-full min-h-screen pt-20 flex flex-col lg:flex-row bg-surface overflow-hidden">
         <div class="w-full lg:w-1/2 flex flex-col justify-center px-6 lg:px-24 py-12 lg:py-0 relative z-10">
             <span class="text-accent font-bold tracking-[0.2em] mb-4 text-sm">EST. 2025</span>
-            
+
             <div class="relative">
-                <h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-7xl 2xl:text-8xl font-bold leading-[0.9] text-primary mb-2 uppercase">
+                <h1
+                    class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-7xl 2xl:text-8xl font-bold leading-[0.9] text-primary mb-2 uppercase">
                     L'ATELIER<br>
                     <span class="text-outline">BOULANGERIE</span>
                 </h1>
             </div>
 
             <p class="mt-8 text-gray-600 max-w-md leading-relaxed border-l-2 border-accent pl-6">
-                Une approche architecturale de la boulangerie. Farines anciennes, fermentation lente, et précision millimétrée au cœur de Liège.
+                Une approche architecturale de la boulangerie. Farines anciennes, fermentation lente, et précision
+                millimétrée au cœur de Liège.
             </p>
 
             <div class="mt-12">
@@ -166,11 +168,11 @@
             </div>
         </div>
 
-        <div class="w-full lg:w-1/2 h-[50vh] lg:h-auto relative lg:clip-sharp-split bg-black">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                 class="absolute inset-0 w-full h-full object-cover opacity-70 filter grayscale contrast-110"
-                 alt="Texture Pain Noir">
-            
+        <div class="w-full lg:w-1/2 h-[50vh] lg:h-auto relative bg-black">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="absolute inset-0 w-full h-full object-cover opacity-70 filter grayscale contrast-110"
+                alt="Texture Pain Noir">
+
             <div class="absolute bottom-10 left-6 lg:left-12 text-white text-left z-10">
                 <div class="font-display text-4xl font-bold">100%</div>
                 <div class="text-sm tracking-widest text-accent">LEVAIN NATUREL</div>
@@ -186,7 +188,8 @@
                 </h2>
                 <div class="space-y-8 font-light text-gray-400">
                     <p>
-                        Nous ne faisons pas simplement du pain. Nous construisons des structures de saveurs. Chaque miche est le résultat d'une équation complexe entre température, temps et biologie.
+                        Nous ne faisons pas simplement du pain. Nous construisons des structures de saveurs. Chaque
+                        miche est le résultat d'une équation complexe entre température, temps et biologie.
                     </p>
                     <ul class="space-y-4 font-mono text-sm border-t border-gray-800 pt-8">
                         <li class="flex justify-between items-center">
@@ -204,12 +207,12 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="relative border border-white/20 p-4">
                 <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent"></div>
-                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000&auto=format&fit=crop" 
-                     class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" 
-                     alt="Mains de boulanger">
+                <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000&auto=format&fit=crop"
+                    class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                    alt="Mains de boulanger">
                 <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent"></div>
             </div>
         </div>
@@ -218,65 +221,74 @@
     <section id="collection" class="py-32 bg-surface">
         <div class="max-w-screen-2xl mx-auto px-6">
             <div class="flex justify-between items-end mb-20 border-b-2 border-primary pb-6">
-                <h2 class="font-display text-5xl lg:text-7xl text-primary">COLLECTION <span class="text-outline">01</span></h2>
+                <h2 class="font-display text-5xl lg:text-7xl text-primary">COLLECTION <span
+                        class="text-outline">01</span></h2>
                 <span class="hidden md:block font-mono text-xs text-right">SAISON<br>HIVER 2025</span>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-primary">
-                
-                <div class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px] transition-colors duration-300">
+
+                <div
+                    class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px] transition-colors duration-300">
                     <div class="w-full h-64 overflow-hidden mb-8 bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1511629036492-6c07153d3e83?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                             class="product-img w-full h-full object-cover transition-all duration-500" 
-                             alt="Pain campagne">
+                        <img src="https://images.unsplash.com/photo-1511629036492-6c07153d3e83?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="product-img w-full h-full object-cover transition-all duration-500"
+                            alt="Pain campagne">
                     </div>
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="font-display text-3xl font-bold">LE BRUT</h3>
                             <span class="font-mono text-sm border border-primary px-2 py-1">N°01</span>
                         </div>
-                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Seigle & Froment • Croûte Épaisse</p>
+                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Seigle & Froment •
+                            Croûte Épaisse</p>
                         <div class="flex justify-between items-center mt-auto pt-6 border-t border-gray-200">
                             <span class="font-bold text-xl">4.50€</span>
-                            <button class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
+                            <button
+                                class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px]">
+                <div
+                    class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px]">
                     <div class="w-full h-64 overflow-hidden mb-8 bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1596554928189-05ea9bfffe3f?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                             class="product-img w-full h-full object-cover transition-all duration-500" 
-                             alt="Croissant">
+                        <img src="https://images.unsplash.com/photo-1596554928189-05ea9bfffe3f?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="product-img w-full h-full object-cover transition-all duration-500" alt="Croissant">
                     </div>
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="font-display text-3xl font-bold">L'OR</h3>
                             <span class="font-mono text-sm border border-primary px-2 py-1">N°02</span>
                         </div>
-                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Beurre de Ferme • Feuilletage 27</p>
+                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Beurre de Ferme •
+                            Feuilletage 27</p>
                         <div class="flex justify-between items-center mt-auto pt-6 border-t border-gray-200">
                             <span class="font-bold text-xl">1.80€</span>
-                            <button class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
+                            <button
+                                class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px]">
+                <div
+                    class="product-card group border-r border-b border-primary p-12 flex flex-col justify-between h-[600px]">
                     <div class="w-full h-64 overflow-hidden mb-8 bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1604322796450-ec2c51485442?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                             class="product-img w-full h-full object-cover transition-all duration-500" 
-                             alt="Baguette Tradition">
+                        <img src="https://images.unsplash.com/photo-1604322796450-ec2c51485442?q=80&w=1085&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="product-img w-full h-full object-cover transition-all duration-500"
+                            alt="Baguette Tradition">
                     </div>
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="font-display text-3xl font-bold">L'ÉPI</h3>
                             <span class="font-mono text-sm border border-primary px-2 py-1">N°03</span>
                         </div>
-                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Tradition Française • Mie Alvéolée</p>
+                        <p class="font-mono text-xs text-gray-500 mb-6 uppercase tracking-wide">Tradition Française •
+                            Mie Alvéolée</p>
                         <div class="flex justify-between items-center mt-auto pt-6 border-t border-gray-200">
                             <span class="font-bold text-xl">2.20€</span>
-                            <button class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
+                            <button
+                                class="text-accent uppercase text-xs font-bold tracking-widest group-hover:text-primary transition-colors">Détails</button>
                         </div>
                     </div>
                 </div>
@@ -287,7 +299,7 @@
 
     <footer id="contact" class="bg-primary text-white clip-diagonal-reverse pt-48 lg:pt-32 pb-12">
         <div class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-16">
-            
+
             <div class="space-y-8">
                 <h3 class="font-display text-4xl text-white">CONTACT<span class="text-accent">.</span></h3>
                 <div class="font-mono text-sm text-gray-300 space-y-4">
@@ -303,19 +315,16 @@
             </div>
 
             <div class="lg:col-span-2 h-80 grayscale border border-white/10 bg-gray-100">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    frameborder="0" 
-                    style="border:0" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe" 
+                <iframe width="100%" height="100%" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe"
                     allowfullscreen>
                 </iframe>
             </div>
 
         </div>
-        
-        <div class="max-w-screen-xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-gray-400">
+
+        <div
+            class="max-w-screen-xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-gray-400">
             <p>© 2025 L'ATELIER BOULANGERIE.</p>
             <div class="flex flex-wrap justify-center gap-6 mt-4 md:mt-0 uppercase">
                 <a href="/cookies.html" class="hover:text-white transition-colors">Politique de Cookies</a>
@@ -343,4 +352,5 @@
         });
     </script>
 </body>
+
 </html>
