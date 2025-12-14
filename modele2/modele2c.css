@@ -58,6 +58,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 /* Typography Overrides */
