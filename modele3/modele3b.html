@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'ÉCHO - Bistro Liège</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charbon: '#1c1c1c',   // Deep Charcoal
+                        feu: '#ff3300',       // Safety Orange
+                        ciment: '#b0b0b0',    // Concrete Grey
+                        blanc: '#ffffff',
+                    },
+                    fontFamily: {
+                        mono: ['Space Mono', 'monospace'],
+                        display: ['Teko', 'sans-serif'],
+                    },
+                    screens: {
+                        'souris': {'raw': '(hover: hover)'}, 
+                    },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --accent-color: #ff3300;
+        }
+
+        /* Disable Double Tap Zoom */
+        body {
+            touch-action: manipulation;
+        }
+
+        /* Noise Texture */
+        .bg-noise {
+            background-color: #1c1c1c;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        /* Hard Offset Shadow for Hero Title */
+        .text-impact {
+            color: #ffffff;
+            text-shadow: 4px 4px 0px var(--accent-color);
+        }
+        @media (min-width: 768px) {
+            .text-impact {
+                text-shadow: 8px 8px 0px var(--accent-color);
+            }
+        }
+
+        /* Receipt Pattern */
+        .ticket-dentele {
+            background-image: linear-gradient(135deg, #1c1c1c 8px, transparent 0), linear-gradient(-135deg, #1c1c1c 8px, transparent 0);
+            background-size: 16px 16px;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            height: 16px;
+            width: 100%;
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-noise text-ciment font-mono selection:bg-feu selection:text-white overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-charbon/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-3 h-3 bg-feu animate-pulse-slow"></div>
+                <a href="#" class="font-display text-4xl tracking-wide text-white uppercase leading-none mt-1">
+                    L'Écho
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-12 text-sm tracking-widest">
+                <a href="#concept" class="hover:text-feu transition-colors uppercase">01. Concept</a>
+                <a href="#carte" class="hover:text-feu transition-colors uppercase">02. Menu</a>
+                <a href="#lieu" class="border border-feu text-feu px-6 py-2 hover:bg-feu hover:text-white transition-colors uppercase">
+                    Réserver
+                </a>
+            </div>
+
+            <button id="nav-btn" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <div id="nav-dropdown" class="absolute top-full left-0 w-full bg-charbon border-b border-white/10 transform scale-y-0 origin-top transition-transform duration-300 ease-in-out flex flex-col shadow-2xl">
+            <a href="#concept" class="block border-b border-white/5 py-6 text-center text-2xl font-display uppercase text-white hover:text-feu">01. Concept</a>
+            <a href="#carte" class="block border-b border-white/5 py-6 text-center text-2xl font-display uppercase text-white hover:text-feu">02. Menu</a>
+            <a href="#lieu" class="block py-6 text-center text-2xl font-display uppercase bg-feu text-white">Réserver</a>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-screen min-h-[600px] flex items-center border-b border-white/10">
+        
+        <div class="absolute inset-0 md:relative md:w-1/2 h-full z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518188770546-efd25d4ca263?q=80&w=1171&auto=format&fit=crop" alt="Burger Vibe" class="w-full h-full object-cover opacity-60 md:opacity-100 transition-transform duration-[20s] ease-linear scale-100 hover:scale-110 transform origin-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-charbon via-charbon/80 to-transparent md:bg-none"></div>
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-charbon to-transparent md:hidden"></div>
+        </div>
+
+        <div class="relative z-10 w-full md:w-1/2 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24">
+            
+            <p class="text-feu text-sm tracking-[0.2em] mb-12 md:mb-24 uppercase font-bold flex items-center gap-2">
+                <span class="w-8 h-[1px] bg-feu"></span>
+                Boverie, Liège
+            </p>
+            
+            <h1 class="font-display text-7xl sm:text-8xl md:text-7xl lg:text-8xl xl:text-9xl uppercase leading-none mb-8 whitespace-nowrap text-impact">
+                Goût Brut.
+            </h1>
+
+            <div class="space-y-6 max-w-md border-l-2 border-white/20 pl-6">
+                <p class="text-ciment text-sm md:text-base leading-relaxed">
+                    Produits locaux, flamme vive, et zéro compromis sur la qualité.
+                </p>
+                <a href="#carte" class="inline-flex items-center gap-2 text-white font-bold uppercase tracking-widest hover:gap-4 transition-all duration-300">
+                    Découvrir le menu <i data-lucide="arrow-right" class="w-4 h-4 text-feu"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 right-8 hidden md:block z-20">
+            <div class="w-24 h-24 rounded-full border border-white/20 flex items-center justify-center animate-spin-slow">
+                <div class="w-20 h-20 bg-feu/10 rounded-full flex items-center justify-center backdrop-blur-sm text-center">
+                    <span class="text-[0.6rem] font-bold uppercase leading-tight text-feu">Est.<br>2025</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="w-full bg-feu text-charbon overflow-hidden py-3 border-y border-charbon relative z-20">
+        <div class="flex">
+            <div class="animate-[marquee_20s_linear_infinite] md:animate-marquee whitespace-nowrap font-display text-3xl md:text-4xl uppercase tracking-wide leading-none flex-shrink-0">
+                <span class="mx-8">/// Smash Burgers</span>
+                <span class="mx-8">/// Vins Nature</span>
+                <span class="mx-8">/// Ambiance Brute</span>
+                <span class="mx-8">/// Produits Locaux</span>
+                <span class="mx-8">/// Smash Burgers</span>
+                <span class="mx-8">/// Vins Nature</span>
+                <span class="mx-8">/// Ambiance Brute</span>
+                <span class="mx-8">/// Produits Locaux</span>
+            </div>
+            <div class="animate-[marquee_15s_linear_infinite] md:animate-marquee whitespace-nowrap font-display text-3xl md:text-4xl uppercase tracking-wide leading-none flex-shrink-0">
+                <span class="mx-8">/// Smash Burgers</span>
+                <span class="mx-8">/// Vins Nature</span>
+                <span class="mx-8">/// Ambiance Brute</span>
+                <span class="mx-8">/// Produits Locaux</span>
+                <span class="mx-8">/// Smash Burgers</span>
+                <span class="mx-8">/// Vins Nature</span>
+                <span class="mx-8">/// Ambiance Brute</span>
+                <span class="mx-8">/// Produits Locaux</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="concept" class="py-24 px-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-2 hidden md:block">
+                <span class="font-display text-9xl text-white/5 select-none">01</span>
+            </div>
+
+            <div class="md:col-span-5">
+                <h2 class="font-display text-5xl md:text-6xl text-white uppercase mb-6 leading-none">
+                    L'Essentiel, <span class="text-feu">Rien d'autre</span>
+                </h2>
+                <p class="mb-6 opacity-80 leading-relaxed">
+                    Nous avons dépouillé la gastronomie de ses artifices. Pas de nappes blanches, pas de serveurs en gants. Juste une cuisine honnête, bruyante et vivante.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 border border-white/10">
+                        <i data-lucide="flame" class="text-feu mb-2 w-6 h-6"></i>
+                        <h3 class="font-bold text-white uppercase text-sm">Cuisson Flamme</h3>
+                    </div>
+                    <div class="bg-white/5 p-4 border border-white/10">
+                        <i data-lucide="sprout" class="text-feu mb-2 w-6 h-6"></i>
+                        <h3 class="font-bold text-white uppercase text-sm">Bio & Local</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 relative h-96 w-full">
+                <div class="absolute inset-0 border-2 border-white/10 transform translate-x-4 translate-y-4"></div>
+                <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=1170&auto=format&fit=crop" class="w-full h-full object-cover filter grayscale contrast-125 relative z-10" alt="Ambiance Cuisine">
+            </div>
+        </div>
+    </section>
+
+    <section id="carte" class="py-24 px-4 bg-charbon bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+        <div class="max-w-2xl mx-auto">
+            
+            <div class="bg-white text-charbon p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute top-0 left-0 w-full h-4 -mt-4 bg-charbon ticket-dentele transform rotate-180"></div>
+                
+                <div class="text-center mb-8 border-b-2 border-dashed border-charbon pb-6">
+                    <h2 class="font-display text-5xl uppercase mb-2 tracking-tighter">L'ADDITION</h2>
+                    <p class="text-sm font-bold uppercase tracking-widest font-mono">Date: 2025 // Table: 12</p>
+                </div>
+
+                <div class="space-y-8 font-mono">
+                    
+                    <div class="flex justify-between items-start group">
+                        <div>
+                            <h3 class="font-bold text-xl uppercase mb-1">Œuf Mayo "Champion"</h3>
+                            <p class="text-xs opacity-60 max-w-[250px]">Œuf bio, mayonnaise maison montée minute, ciboulette, piment d'Espelette.</p>
+                        </div>
+                        <div class="text-xl font-bold">6.00€</div>
+                    </div>
+
+                    <div class="flex justify-between items-start group">
+                        <div>
+                            <h3 class="font-bold text-xl uppercase mb-1">Le Smash Double</h3>
+                            <p class="text-xs opacity-60 max-w-[250px]">Double patty bœuf local, cheddar affiné, pickles maison, potato bun.</p>
+                        </div>
+                        <div class="text-xl font-bold">16.00€</div>
+                    </div>
+
+                    <div class="flex justify-between items-start group">
+                        <div>
+                            <h3 class="font-bold text-xl uppercase mb-1">Gaufre de Liège</h3>
+                            <p class="text-xs opacity-60 max-w-[250px]">La vraie. Sucre perlé, chocolat noir fondu 70%.</p>
+                        </div>
+                        <div class="text-xl font-bold">8.00€</div>
+                    </div>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t-2 border-dashed border-charbon text-center">
+                    <p class="text-sm font-bold uppercase mb-4">*** SERVICE COMPRIS ***</p>
+                    <a href="./menu.pdf" target="_blank" class="block w-full bg-charbon text-white py-4 font-bold font-display text-xl tracking-wide hover:bg-feu hover:text-white transition-colors border-2 border-charbon uppercase">
+                        Télécharger PDF Complet
+                    </a>
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full h-4 -mb-4 bg-charbon ticket-dentele"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lieu" class="grid lg:grid-cols-2 min-h-[500px] border-t border-white/10 scroll-mt-16">
+        
+        <div class="p-12 md:p-20 flex flex-col justify-center bg-charbon relative border-b lg:border-b-0 lg:border-r border-white/10">
+            <h2 class="font-display text-6xl text-white mb-10">NOUS TROUVER</h2>
+            
+            <div class="space-y-8 font-mono text-lg text-ciment">
+                <div class="flex items-start group">
+                    <div class="p-3 bg-white/5 border border-white/10 mr-6 group-hover:border-feu transition-colors">
+                        <i data-lucide="map-pin" class="text-feu"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold uppercase mb-1">Adresse</p>
+                        <p>Parc de la Boverie 3,<br>4020 Liège</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start group">
+                    <div class="p-3 bg-white/5 border border-white/10 mr-6 group-hover:border-feu transition-colors">
+                        <i data-lucide="phone" class="text-feu"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold uppercase mb-1">Contact</p>
+                        <p>+32 123 45 67 89</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-white/10 flex gap-6">
+                <a href="#" class="text-ciment hover:text-feu transition-colors uppercase text-sm font-bold tracking-widest">Instagram</a>
+                <a href="#" class="text-ciment hover:text-feu transition-colors uppercase text-sm font-bold tracking-widest">Facebook</a>
+            </div>
+        </div>
+
+        <div class="relative min-h-[400px] lg:min-h-full h-full">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4812.25830192955!2d5.5727378306109365!3d50.62961860274183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9ff07187513%3A0xe7659c7816882b14!2sLa%20Boverie!5e0!3m2!1sen!2sbe!4v1762858837096!5m2!1sen!2sbe" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                class="absolute inset-0 w-full h-full"
+                aria-hidden="false" 
+                tabindex="0">
+            </iframe>
+        </div>
+
+    </section>
+
+    <script>
+        lucide.createIcons();
+
+        // Navbar Logic
+        const btn = document.getElementById('nav-btn');
+        const menu = document.getElementById('nav-dropdown');
+        const links = document.querySelectorAll('#nav-dropdown a');
+        let isOpen = false;
+
+        function toggle() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                menu.classList.remove('scale-y-0');
+                btn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
+            } else {
+                menu.classList.add('scale-y-0');
+                btn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        btn.addEventListener('click', toggle);
+        links.forEach(l => l.addEventListener('click', toggle));
+    </script>
+</body>
+</html>
